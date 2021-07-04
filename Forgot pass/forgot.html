@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="forgot.css">
+    <script src="https://kit.fontawesome.com/73f6a8d89f.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="logo">
+                <img src="login-logo.png" alt="LOGO">
+            </div>
+            <div style="border-radius: 4px;" class="form">
+                <div class="form-input">
+                    <input type="text" placeholder="USERNAME">
+                </div>
+                <div class="selection">
+
+                    <label class="sms" for="sms">SMS</label>
+                    <input type="radio" class="css-checkbox" name="sms">
+                    <label class="email" for="email">Email</label>
+                    <input type="radio" name="email">
+
+                </div>
+                <div class="btn">
+                    <button style="width: 30%;"  type="button" class="pull-left btn btn-primary ml-10" onclick="forgot_password_send(this);">
+                        <i style="margin-left: .5rem;" class="fa fa-send"></i> Send Code</button>
+                        <span class="cancel-button pull-right btn btn-primary ml-10" onclick="forgot_password_close();"> Cancel</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-left">
+            Designed &amp; Developed By <a href="http://www.sitsol.net" target="_blank" class="sits-link-a"
+                style="font-weight: bold;">SIT Solutions</a>
+            &nbsp;&nbsp;
+            <i class="fa fa-envelope"></i>
+            <span class="ft-ex"> <a href="mailto:info@sitsbook.com">info@sitsbook.com</a> </span>
+            <span class="ft-ex"> UAN: +92 320 7448888</span>
+            [ <small>Version : 7.0.1</small> ]
+            </span>
+
+            </span></p>
+        </div>
+        <div class="footer-right">
+            <span class="ft-ex right">
+                <div class="pull-right" style="padding-right:10px;">
+                    <a href="https://facebook.com/SitsbookBusinessSoftwares" class="ft-ex-social ft-ex-social-f"
+                        target="_blank"></a>
+                    <a href="https://plus.google.com/108334373454545379362/posts" class="ft-ex-social ft-ex-social-g"
+                        target="_blank"></a>
+                    <a href="https://twitter.com/sitsbook" class="ft-ex-social ft-ex-social-t" target="_blank"></a>
+                </div>
+                <div class="pull-right" style="padding-top:5px;">
+                    <a href="http://sitsbook.com/faq" target="_blank" class="ft-ex-links">FAQ </a> |
+                    <a href="http://blog.sitsbook.com" target="_blank" class="ft-ex-links"> blog </a> |
+                    <a href="http://forum.sitsbook.com" target="_blank" class="ft-ex-links">Forums
+                    </a>&nbsp;&nbsp;&nbsp;
+                    <!-- <a href="http://sitsbook.com/user-panel/user-login.php" target="_blank" class="ft-ex-links">Support</a> | -->
+                    <!-- <a href="http://blog.sitsbook.com" target="_blank" class="ft-ex-links"> News &amp; Events </a> -->
+                </div>
+            </span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

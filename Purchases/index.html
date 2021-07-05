@@ -1,0 +1,745 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>SIT Solutions</title>
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/reset.css" type="text/css"
+        media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/style.css" type="text/css"
+        media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/invalid.css" type="text/css"
+        media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/form.css" type="text/css"
+        media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/tabs.css" type="text/css"
+        media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/reports.css" type="text/css"
+        media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/font-awesome.css" type="text/css"
+        media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/bootstrap.min.css" type="text/css"
+        media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/bootstrap-select.css"
+        type="text/css" media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/jquery-ui/jquery-ui.min.css"
+        type="text/css">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/table-style.css" type="text/css">
+
+    <style type="text/css">
+        .ui-tooltip {
+            font-size: 12px;
+            padding: 5px;
+            box-shadow: none;
+            border: 1px solid #999
+        }
+
+        div.tabPanel .tab,
+        div.tabPanel .tabSelected {
+            -webkit-box-sizing: content-box !important;
+            -moz-box-sizing: content-box !important;
+            box-sizing: content-box !important
+        }
+
+        .input_sized {
+            float: left;
+            width: 152px;
+            padding-left: 5px;
+            border: 1px solid #ccc;
+            height: 30px;
+            -webkit-box-shadow: #f4f4f4 0 0 0 2px;
+            border: 1px solid #ddd;
+            border-top-right-radius: 3px;
+            border-top-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+            -moz-border-radius-topleft: 3px;
+            -moz-border-radius-topright: 3px;
+            -moz-border-radius-bottomleft: 3px;
+            -moz-border-radius-bottomright: 5px;
+            -webkit-border-top-left-radius: 3px;
+            -webkit-border-top-right-radius: 3px;
+            -webkit-border-bottom-left-radius: 3px;
+            -webkit-border-bottom-right-radius: 3px;
+            box-shadow: 0 0 2px #eee;
+            transition: box-shadow 300ms;
+            -webkit-transition: box-shadow 300ms
+        }
+
+        .input_sized:hover {
+            border-color: #9ecaed;
+            box-shadow: 0 0 2px #9ecaed
+        }
+
+        td,
+        th {
+            padding: 10px 5px !important;
+            border: 1px solid #ccc !important
+        }
+
+        .caption {
+            padding: 5px !important
+        }
+
+        td.itemName {
+            padding-left: 10px !important
+        }
+
+        td.quantity {
+            position: relative;
+            cursor: pointer
+        }
+
+        input.error {
+            border-color: red !important
+        }
+
+        table thead th {
+            text-align: center !important
+        }
+
+        table tbody th {
+            text-align: center !important
+        }
+
+        table tr.totals th {
+            text-align: center !important
+        }
+
+        table tr.totals td {
+            font-weight: 900;
+            text-align: center !important
+        }
+    </style>
+    <!-- jQuery -->
+    <script src="https://kit.fontawesome.com/73f6a8d89f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/jquery.1.11.min.js"></script>
+    <script type="text/javascript"
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript"
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/bootstrap-select.js"></script>
+    <script type="text/javascript"
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/configuration.js"></script>
+    <script type="text/javascript"
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/inventory.configuration.js"></script>
+    <script type="text/javascript"
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/sideBarFunctions.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/tab.js"></script>
+    <script type="text/javascript"
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/cubic-fields.js"></script>
+
+</head>
+
+<body style="" cz-shortcut-listen="true">
+    <input type="hidden" class="purchase_id" value="0">
+    <input type="hidden" class="config_description" value="N">
+    <input type="hidden" class="sms-config" value="N">
+    <input type="hidden" class="use_cartons" value="N">
+    <input type="hidden" class="use_tax" value="N">
+    <input type="hidden" class="use_tiles" value="N">
+    <input type="hidden" class="use_freight" value="N">
+    <input type="hidden" class="use_color" value="N">
+    <input type="hidden" class="use_milk_addon" value="N">
+    <input type="hidden" class="individual_discount" value="Y">
+    <input type="hidden" class="weight_addon" value="N">
+    <input type="hidden" class="config_cubic" value="N">
+    <input type="hidden" class="config_pnl_date" value="2020-04-02">
+    <input type="hidden" class="config_loadItems" value="N">
+    <input type="hidden" class="scheme_config" value="N">
+    <input type="hidden" class="config_w_h_cal" value="N">
+    <input type="hidden" class="config_pur_item_exp" value="N">
+    <input type="hidden" class="config_tax_type" value="P">
+    <input type="hidden" class="config_mobile_version" value="N">
+
+
+    <div id="body-wrapper">
+        <div id="sidebar">
+            <input type="hidden" value="purchase-details.php" class="this_file_name">
+            <input type="hidden" value="010101001" class="cash_default">
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="hamburger hamburger--3dx-r pull-left toggleSideBar"><span class="hamburger-box"><span
+                                    class="hamburger-inner"></span></span></a>
+                        <a href="dashboard.php" class="navbar-brand">
+                            <script data-pagespeed-no-defer="">//<![CDATA[
+                                (function () { for (var g = "function" == typeof Object.defineProperties ? Object.defineProperty : function (b, c, a) { if (a.get || a.set) throw new TypeError("ES3 does not support getters and setters."); b != Array.prototype && b != Object.prototype && (b[c] = a.value) }, h = "undefined" != typeof window && window === this ? this : "undefined" != typeof global && null != global ? global : this, k = ["String", "prototype", "repeat"], l = 0; l < k.length - 1; l++) { var m = k[l]; m in h || (h[m] = {}); h = h[m] } var n = k[k.length - 1], p = h[n], q = p ? p : function (b) { var c; if (null == this) throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined"); c = this + ""; if (0 > b || 1342177279 < b) throw new RangeError("Invalid count value"); b |= 0; for (var a = ""; b;)if (b & 1 && (a += c), b >>>= 1) c += c; return a }; q != p && null != q && g(h, n, { configurable: !0, writable: !0, value: q }); var t = this; function u(b, c) { var a = b.split("."), d = t; a[0] in d || !d.execScript || d.execScript("var " + a[0]); for (var e; a.length && (e = a.shift());)a.length || void 0 === c ? d[e] ? d = d[e] : d = d[e] = {} : d[e] = c }; function v(b) { var c = b.length; if (0 < c) { for (var a = Array(c), d = 0; d < c; d++)a[d] = b[d]; return a } return [] }; function w(b) { var c = window; if (c.addEventListener) c.addEventListener("load", b, !1); else if (c.attachEvent) c.attachEvent("onload", b); else { var a = c.onload; c.onload = function () { b.call(this); a && a.call(this) } } }; var x; function y(b, c, a, d, e) { this.h = b; this.j = c; this.l = a; this.f = e; this.g = { height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight, width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth }; this.i = d; this.b = {}; this.a = []; this.c = {} } function z(b, c) { var a, d, e = c.getAttribute("data-pagespeed-url-hash"); if (a = e && !(e in b.c)) if (0 >= c.offsetWidth && 0 >= c.offsetHeight) a = !1; else { d = c.getBoundingClientRect(); var f = document.body; a = d.top + ("pageYOffset" in window ? window.pageYOffset : (document.documentElement || f.parentNode || f).scrollTop); d = d.left + ("pageXOffset" in window ? window.pageXOffset : (document.documentElement || f.parentNode || f).scrollLeft); f = a.toString() + "," + d; b.b.hasOwnProperty(f) ? a = !1 : (b.b[f] = !0, a = a <= b.g.height && d <= b.g.width) } a && (b.a.push(e), b.c[e] = !0) } y.prototype.checkImageForCriticality = function (b) { b.getBoundingClientRect && z(this, b) }; u("pagespeed.CriticalImages.checkImageForCriticality", function (b) { x.checkImageForCriticality(b) }); u("pagespeed.CriticalImages.checkCriticalImages", function () { A(x) }); function A(b) { b.b = {}; for (var c = ["IMG", "INPUT"], a = [], d = 0; d < c.length; ++d)a = a.concat(v(document.getElementsByTagName(c[d]))); if (a.length && a[0].getBoundingClientRect) { for (d = 0; c = a[d]; ++d)z(b, c); a = "oh=" + b.l; b.f && (a += "&n=" + b.f); if (c = !!b.a.length) for (a += "&ci=" + encodeURIComponent(b.a[0]), d = 1; d < b.a.length; ++d) { var e = "," + encodeURIComponent(b.a[d]); 131072 >= a.length + e.length && (a += e) } b.i && (e = "&rd=" + encodeURIComponent(JSON.stringify(B())), 131072 >= a.length + e.length && (a += e), c = !0); C = a; if (c) { d = b.h; b = b.j; var f; if (window.XMLHttpRequest) f = new XMLHttpRequest; else if (window.ActiveXObject) try { f = new ActiveXObject("Msxml2.XMLHTTP") } catch (r) { try { f = new ActiveXObject("Microsoft.XMLHTTP") } catch (D) { } } f && (f.open("POST", d + (-1 == d.indexOf("?") ? "?" : "&") + "url=" + encodeURIComponent(b)), f.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), f.send(a)) } } } function B() { var b = {}, c; c = document.getElementsByTagName("IMG"); if (!c.length) return {}; var a = c[0]; if (!("naturalWidth" in a && "naturalHeight" in a)) return {}; for (var d = 0; a = c[d]; ++d) { var e = a.getAttribute("data-pagespeed-url-hash"); e && (!(e in b) && 0 < a.width && 0 < a.height && 0 < a.naturalWidth && 0 < a.naturalHeight || e in b && a.width >= b[e].o && a.height >= b[e].m) && (b[e] = { rw: a.width, rh: a.height, ow: a.naturalWidth, oh: a.naturalHeight }) } return b } var C = ""; u("pagespeed.CriticalImages.getBeaconData", function () { return C }); u("pagespeed.CriticalImages.Run", function (b, c, a, d, e, f) { var r = new y(b, c, a, e, f); x = r; d && w(function () { window.setTimeout(function () { A(r) }, 0) }) }); })(); pagespeed.CriticalImages.Run('/mod_pagespeed_beacon', 'http://frontierfoundation.sitsbook.info/purchase-details.php', 'oG-7lxx8_G', true, false, '4NSFtC8GCjc');
+    //]]></script><img alt="Company logo" class="logo_small" src="resource/images/sitsbook-logo/logo.png"
+                                data-pagespeed-url-hash="1196390074"
+                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                        </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+
+
+                            <li><a class="notification-icons" href="change-password.php">
+                                    <i class="fa fa-user"></i> <span>Frontier Foundation</span> </a>
+                            </li>
+                            <li><a class="notification-icons" href="logout.php?out" data-toggle="tooltip" title=""
+                                    data-original-title="Logout"><i class="fa fa-sign-out"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <aside class="">
+                <nav class="site-nav">
+                    <ul id="main-nav">
+                        <li><a href="dashboard.php" class="nav-top-item no-submenu hvr-underline-from-center"><i
+                                    class="fa fa-dashboard"></i> Dashboard</a></li>
+                        <li><a class="nav-top-item hvr-underline-from-center submenu-open"><i class="fa fa-book"></i>
+                                Cash / Cheque</a>
+                            <ul style="display: block;">
+                                <li><a href="create-voucher.php">Journal Voucher</a></li>
+                                <li><a href="cash-book-voucher.php">Cash Book</a></li>
+                                <li><a href="cash-receipt.php">Cash Receipt</a></li>
+                                <li><a href="cash-payment.php">Cash Payment</a></li>
+                                <li><a href="bank-receipt.php">Bank Receipt</a></li>
+                                <li><a href="bank-payment.php">Bank Payment</a></li>
+                                <li><a href="posted-enteries.php">Search Vouchers</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="nav-top-item current hvr-underline-from-center"><i
+                                    class="fa fa-shopping-cart"></i> Purchases</a>
+                            <ul style="display: none;">
+                                <li><a href="purchase-details.php" class="current">Purchases</a></li>
+                                <li><a href="purchase-return-details.php">Purchase Returns</a></li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!--<li><a class="nav-top-item no-submenu" href="nozzle-sales-records-form-machine.php">-->
+                        <!--	<i class="fa fa-cog"></i> Nozzles Bills</a></li>-->
+
+
+                        <li><a class="nav-top-item hvr-underline-from-center"><i class="fa fa-angle-double-right"></i>
+                                Sales</a>
+                            <ul style="display: none;">
+
+
+
+                                <!-- <li><a href="sale-orders.php">Sale Orders</a></li> -->
+                                <li><a href="sale-details.php">Sales</a></li>
+                                <li><a href="sales-return-details.php">Sale Returns</a></li>
+
+
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li><a class="nav-top-item hvr-underline-from-center"><i class="fa fa-cog"></i> Petrol Pump</a>
+                            <ul style="display: none;">
+                                <li><a href="pp-nozzle-reading-form.php"> Nozzle Reading Form</a></li>
+                                <li><a href="pp-nozzle-reading-list.php?tab=list"> Nozzle Reading List</a></li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+                        <li><a class="nav-top-item hvr-underline-from-center" style="display: none;"><i
+                                    class="fa fa-angle-double-right"></i> Embroidery</a>
+                            <ul style="display: none;">
+                            </ul>
+                        </li>
+
+
+                        <!-- <li><a class="nav-top-item"><i class="fa fa-money"></i>Cheques</a> -->
+                        <!-- <ul> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+
+
+
+
+                        <li><a href="financial-reports.php" class="nav-top-item no-submenu hvr-underline-from-center"><i
+                                    class="fa fa-calculator"></i> Reports</a></li>
+                        <li><a href="settings.php" class="nav-top-item no-submenu hvr-underline-from-center"><i
+                                    class="fa fa-cog"></i> Settings</a></li>
+
+
+
+
+
+                        <li><a href="backup.php" class="nav-top-item no-submenu hvr-underline-from-center"><i
+                                    class="fa fa-database"></i> Backup</a></li>
+
+
+                        <li><a href="logout.php?out" class="nav-top-item no-submenu hvr-underline-from-center"><i
+                                    class="fa fa-sign-out"></i> Sign Out</a></li>
+                    </ul> <!-- End #main-nav -->
+                </nav>
+            </aside>
+            <div class="clear"></div>
+
+            <!-- get sms balance -->
+            <script
+                type="text/javascript">setTimeout(function () { var mode = 'smsBalance'; $.post('db/sms-info-process.php', { mode: mode }, function (data) { data = $.parseJSON(data); $('span.sms_count').html(data['SMS']); }); }, 5000);</script>
+        </div>
+        <div class="content-box-top">
+            <div class="summery_body">
+                <div class="content-box-header">
+                    <p>Purchased Details</p>
+                    <span id="tabPanel">
+                        <div class="tabPanel">
+                            <a href="purchased-list.php?tab=list">
+                                <div class="tab">List</div>
+                            </a>
+                            <a href="purchased-list.php?tab=search">
+                                <div class="tab">Search</div>
+                            </a>
+                            <div class="tabSelected">Details</div>
+                        </div>
+                    </span>
+                    <div class="clear"></div>
+                </div> <!-- End .content-box-header -->
+
+                <div class="content-box-content" style="padding: 5px;">
+                    <div id="bodyTab1">
+                        <div id="form" style="margin: 20px auto;">
+                            <div class="myCat"></div>
+
+                            <div class="pull-right" style="margin-right:25px;padding:5px;">
+                                <div class="pull-left" style="margin-right:25px;">Discount Type : </div>
+                                <input id="cmn-toggle-discount" name="disc_type" value="P"
+                                    class="css-checkbox discount_type" onclick="return discount_type_change(this);"
+                                    type="radio">
+                                <label for="cmn-toggle-discount" class="css-label-radio">Percentage</label>
+                                <input id="cmn-toggle-discount-amount" name="disc_type" value="R"
+                                    class="css-checkbox discount_type" onclick="return discount_type_change(this);"
+                                    type="radio" checked="">
+                                <label for="cmn-toggle-discount-amount" class="css-label-radio">Amount</label>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="caption" style="width:120px;margin-left:0px;padding: 0px;">Date</div>
+                            <div class="field" style="width:150px;margin-left:0px;padding: 0px;">
+                                <input type="text" name="rDate" value="05-07-2021"
+                                    class="form-control datepicker purchaseDate hasDatepicker" style="width:150px"
+                                    id="dp1625448613856" autocomplete="off">
+                            </div>
+
+
+                            <div class="pull-left">
+                                <div class="caption" style="width:70px;margin-left:0px;padding: 0px;">Bill#</div>
+                                <div class="field" style="width: 100px;">
+                                    <input type="text" name="billNum" value="3" class="form-control" style="width:100px"
+                                        readonly="" tabindex="-1" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="caption" style="width:70px;margin-left:0px; ">V.Bill#</div>
+                            <div class="field" style="width:100px;">
+                                <input type="text" name="vendorBillNum" value="" class="form-control"
+                                    style="text-align:center" autocomplete="off">
+                            </div>
+
+
+
+
+                            <div class="caption" style="width:90px;">Vehicle#</div>
+                            <div class="field" style="width:100px">
+                                <input type="text" value="" class="form-control text-center field_1" style="width:100px"
+                                    autocomplete="off">
+                            </div>
+
+
+
+                            <div class="pull-left hide" style="margin-left:30px;">
+
+                                <div class="field" style="">
+                                    <input id="cmn-toggle-unreg" value="Y" class="css-checkbox unregistered_tax"
+                                        type="checkbox">
+                                    <label for="cmn-toggle-unreg" class="css-label"
+                                        style="margin-top:5px;margin-right: 20px;">Unregistered(FBR)</label>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="pull-left">
+                                <div class="caption" style="width:120px;margin-left:0px;">Account:</div>
+                                <div class="field" style="width:270px;position:relative;">
+                                    <a href="#" onclick="add_supplier();" class="btn btn-default pull-right"><i
+                                            class="fa fa-plus" style="color:#06C;margin:0px;padding:0px;"></i></a>
+                                    <div class="btn-group bootstrap-select supplierSelector form-control"
+                                        style="width: 230px;"><button type="button"
+                                            class="btn dropdown-toggle btn-default" data-toggle="dropdown"
+                                            title="Nothing selected"><span class="filter-option pull-left">Nothing
+                                                selected</span>&nbsp;<span class="bs-caret"><span
+                                                    class="caret"></span></span></button>
+                                        <div class="dropdown-menu open">
+                                            <div class="bs-searchbox"><input type="text" class="form-control"
+                                                    autocomplete="off"></div>
+                                            <ul class="dropdown-menu inner" role="menu">
+                                                <li data-original-index="0" class="selected"><a tabindex="0" class=""
+                                                        style="" data-tokens="null"><span class="text"></span><span
+                                                            class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                <li data-original-index="1"><a tabindex="0" class="" style=""
+                                                        data-tokens="null"><span class="text">
+                                                            pso <small class="text-muted">0401010002</small></span><span
+                                                            class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                                <li data-original-index="2"><a tabindex="0" class="" style=""
+                                                        data-tokens="null"><span class="text">
+                                                            PSO <small class="text-muted">0401010003</small></span><span
+                                                            class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            </ul>
+                                        </div><select class="supplierSelector form-control" data-style="btn-default"
+                                            data-live-search="true" data-hide-disabled="true" style="border:none"
+                                            data-width="230" tabindex="-98">
+                                            <option selected="" value=""></option>
+                                            <option data-subtext="0401010002" value="0401010002">
+                                                pso </option>
+                                            <option data-subtext="0401010003" value="0401010003">
+                                                PSO </option>
+                                            <option disabled="" data-subtext="010101001" value="010101001">
+                                                Cash In Hand A/c Frontier Foundation </option>
+                                            <option disabled="" data-subtext="0101010002" value="0101010002">
+                                                Cash In Hand A/c Malik javed sgoo </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="caption" style="width:80px;margin-left:0px;">
+                                <input type="checkbox" id="mor1" onchange="makeItCash(this);"
+                                    class="trasactionType css-checkbox" value="010101001" title="Cash In Hand">
+                                <label id="mor1" for="mor1" class="css-label"
+                                    title="Ctrl+Space"><small>Cash</small></label>
+                            </div>
+                            <input type="text" name="supplier_name" value="" class="field form-control pull-left"
+                                style="width:190px; display: none;" placeholder="Supplier Name" autocomplete="off">
+
+
+
+                            <div class="clear"></div>
+
+                            <div class="clear"></div>
+                            <div class="clear" style="height:30px;"></div>
+                            <div class="col-xs-12" style="padding:0px !important;">
+                                <table class="table min-1024 tableStyle">
+                                    <thead>
+                                        <tr>
+                                            <th width="10%" style="font-size:12px;font-weight:normal;text-align:left">
+                                                Item
+                                                <a href="item-details.php" target="_blank"><i
+                                                        class="fa fa-plus pull-right"></i></a>
+                                                <a href="#" class="reload_item"><i
+                                                        class="fa fa-refresh pull-right"></i></a>
+                                            </th>
+
+
+
+
+
+
+
+
+                                            <th width="6%">qty</th>
+
+
+
+
+
+                                            <th width="6%">Rate</th>
+
+                                            <th width="8%">
+                                                <span class="discountTypeTitle">Disc
+                                                    Rs. </span>
+                                                <span>
+                                                    <input type="text" class="text-center discount_dom" value=""
+                                                        style="width: 50px;" autocomplete="off">
+                                                </span>
+                                                <!-- <span><input type="text" class="form-control text-right whole_discount"  value="" /></span> -->
+                                            </th>
+
+
+                                            <th width="7%">
+                                                Amount(Rs.)
+                                            </th>
+                                            <th width="5%">Stock</th>
+                                            <th width="6%">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <input type="hidden" class="discount_type" value="R">
+                                    <tbody>
+                                        <tr class="quickSubmit alt-row" style="">
+                                            <td>
+                                                <div class="btn-group bootstrap-select itemSelector show-tick form-control"
+                                                    data-original-title="Purchase History" data-placement="bottom">
+                                                    <button type="button" class="dropdown-toggle btn btn-default"
+                                                        data-toggle="dropdown" title="Nothing selected"><span
+                                                            class="filter-option pull-left">Nothing
+                                                            selected</span>&nbsp;<span class="bs-caret"><span
+                                                                class="caret"></span></span></button>
+                                                    <div class="dropdown-menu open">
+                                                        <div class="bs-searchbox"><input type="text"
+                                                                class="form-control" autocomplete="off"></div>
+                                                        <ul class="dropdown-menu inner" role="menu">
+                                                            <li data-original-index="0" class="selected"><a tabindex="0"
+                                                                    class="" style="" data-tokens="null"><span
+                                                                        class="text"></span><span
+                                                                        class="glyphicon glyphicon-ok check-mark"></span></a>
+                                                            </li>
+                                                            <li class="divider" data-optgroup="1div"></li>
+                                                            <li class="dropdown-header" data-optgroup="1"><span
+                                                                    class="text">ITEMS</span></li>
+                                                            <li data-original-index="1" data-optgroup="1"><a
+                                                                    tabindex="0" class="opt  " style=""
+                                                                    data-tokens="null"><span class="text">102~16000 ~
+                                                                        [Petrol]</span><span
+                                                                        class="glyphicon glyphicon-ok check-mark"></span></a>
+                                                            </li>
+                                                            <li data-original-index="2" data-optgroup="1"><a
+                                                                    tabindex="0" class="opt  " style=""
+                                                                    data-tokens="null"><span class="text">101~desal ~
+                                                                        [Desal]</span><span
+                                                                        class="glyphicon glyphicon-ok check-mark"></span></a>
+                                                            </li>
+                                                            <li data-original-index="3" data-optgroup="1"><a
+                                                                    tabindex="0" class="opt  " style=""
+                                                                    data-tokens="null"><span class="text">10103~desel *
+                                                                        ~ [Desal]</span><span
+                                                                        class="glyphicon glyphicon-ok check-mark"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div><select class="itemSelector show-tick form-control"
+                                                        data-style="btn btn-default" data-live-search="true"
+                                                        style="border:none" tabindex="-98">
+                                                        <option selected="" value=""></option>
+                                                        <optgroup label="ITEMS">
+                                                            <option data-type="I" value="2">102~16000 ~ [Petrol]
+                                                            </option>
+                                                            <option data-type="I" value="1">101~desal ~ [Desal]</option>
+                                                            <option data-type="I" value="3">10103~desel * ~ [Desal]
+                                                            </option>
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+                                            </td>
+
+
+
+
+
+
+
+                                            <td><input type="text" class="quantity text-center form-control"
+                                                    autocomplete="off"></td>
+
+
+
+
+
+                                            <td><input type="text" class="unitPrice text-center form-control"
+                                                    autocomplete="off"></td>
+
+
+                                            <td><input type="text" class="discount text-center form-control"
+                                                    autocomplete="off"></td>
+
+
+
+
+                                            <td>
+                                                <input type="text" class="totalAmount text-center form-control"
+                                                    data-sub-amount="" value="0" readonly="" tabindex="-1"
+                                                    autocomplete="off">
+                                            </td>
+
+                                            <td><input type="text" class="inStock text-center form-control" thestock="0"
+                                                    readonly="" tabindex="-1" autocomplete="off"></td>
+                                            <td><input type="button" class="insert_row" value="Enter" id="clear_filter">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <!--doNotRemoveThisLine-->
+                                        <tr style="display:none;" class="calculations"></tr>
+                                        <!--doNotRemoveThisLine-->
+
+                                        <!-- FOR BOOKING ORDER -->
+                                        <!-- CURRENT WORKING -->
+                                        <!-- FOR BOOKING ORDER END -->
+
+                                        <tr class="totals alt-row">
+                                            <td>Total</td>
+
+
+
+
+                                            <td style="background-color:#f5f5f5;" class="qtyTotal"></td>
+
+
+
+
+                                            <td>- - -</td>
+
+                                            <td style="background-color:#f5f5f5;" class="discountAmount"></td>
+                                            <td style="background-color:#f5f5f5;" class="amountTotal">
+                                                0 </td>
+                                            <td>- - -</td>
+                                            <td>- - -</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style="height:10px;"></div>
+                            <div class="panel panel-default pull-left" style="width:550px;">
+                                <div class="panel-heading">Notes : </div>
+                                <textarea class="form-control inv_notes"
+                                    style="height:130px;border-radius:0px;"></textarea>
+                            </div>
+                            <div class="pull-right" style="padding: 0em 1em;width:450px;">
+                                <div class="pull-right">
+
+                                    <div class="caption hide" style="padding: 5px;width: 180px;height: 30px;">Discount :
+                                    </div>
+                                    <div class="caption hide" style="width: 170px;margin-left:0px;">
+                                        <input type="text" class="form-control text-right whole_discount" value=""
+                                            autocomplete="off">
+                                    </div>
+                                    <div class="clear"></div>
+
+                                    <div style="display:none">
+                                        <div class="caption" style="padding: 5px;width: 180px;height: 30px;">Total
+                                            Discount :</div>
+                                        <div class="caption" style="width: 170px;margin-left:0px;">
+                                            <input type="text" class="form-control text-right total_discount" value=""
+                                                autocomplete="off">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div style="display:none">
+                                        <div class="caption" style="padding: 5px;width: 180px;height: 30px;">Tax Amount
+                                            :</div>
+                                        <div class="caption" style="width: 170px;margin-left:0px;">
+                                            <input type="text" class="form-control text-right whole_tax" readonly=""
+                                                value="" tabindex="-1" autocomplete="off">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div class="deliveryPanel" style="display:none">
+                                        <div class="caption" style="padding: 5px;width: 180px;height: 30px;">Freight
+                                            Exp/Company:</div>
+                                        <div class="caption" style="width: 170px;margin-left:0px;">
+                                            <input type="text" class="form-control text-right inv_charges" value=""
+                                                autocomplete="off">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div class="deliveryPanel" style="display:none">
+                                        <div class="caption" style="padding: 5px;width: 180px;height: 30px;">Freight
+                                            Exp/By Us:</div>
+                                        <div class="caption" style="width: 170px;margin-left:0px;">
+                                            <input type="text" class="form-control text-right inv_charges_by_us"
+                                                value="" autocomplete="off">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+                                    <div class="deliveryPanel" style="display:none">
+                                        <div class="caption" style="padding: 5px;width: 180px;height: 30px;">Freight
+                                            Exp/By Others:</div>
+                                        <div class="caption" style="width: 170px;margin-left:0px;">
+                                            <input type="text" class="form-control text-right inv_charges_by_other"
+                                                value="" autocomplete="off">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
+
+
+
+                                    <div class="caption" style="padding: 5px;width: 180px;height: 30px;">Net Total:
+                                    </div>
+                                    <div class="caption" style="width: 170px;margin-left:0px;">
+                                        <input type="text" class="form-control text-right grand_total"
+                                            readonly="readonly" value="" tabindex="-1" autocomplete="off">
+                                    </div>
+                                    <input type="hidden" value="" class="bildiscountamount">
+                                    <div class="clear"></div>
+
+
+                                    <div class="clear"></div>
+
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div style="height:30px;"></div>
+                            <div class="clear"></div>
+                            <div class="hide">
+                                <div class="popover-content"></div>
+                            </div>
+                            <div class="underTheTable col-md-4 pull-right text-center">
+
+
+                                <div class="button pull-right ml-10 savePurchase">
+                                    Save </div>
+
+
+                                <div class="button ml-10 pull-right new_form_button"
+                                    onclick="window.location.href='purchase-details.php';">New Form</div>
+                            </div>
+                            <!--underTheTable-->
+                            <div class="clear"></div>
+                            <div style="margin-top:10px"></div>
+                        </div> <!-- End form -->
+                    </div> <!-- End #tab1 -->
+                </div> <!-- End .content-box-content -->
+            </div> <!-- End .summary_body -->
+        </div> <!-- End .content-box -->
+    </div>
+    <!--body-wrapper-->
+    <div id="xfade" onclick="hidePopUpBox();"></div>
+    <div id="fade"></div>
+    <div id="dialog-confirm" style="display:none;" title="Empty the recycle bin?">
+        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be
+            permanently deleted and cannot be recovered. Are you sure?</p>
+    </div>
+    <div id="popUpForm" class="popUpFormStyle"></div>
+
+
+
+    <script
+        type="text/javascript">$(document).ready(function () { $('select').selectpicker(); setTimeout($("div.itemSelector").attr({ 'data-original-title': 'Purchase History', 'data-placement': 'bottom' }), 400); $("input[name='billNum']").numericOnly(); $("input.quantity").numericFloatOnly(); $("input.unitPrice").numericFloatOnly(); $("input.discount").numericFloatOnly(); $("#datepicker").setFocusTo("input[name='billNum']"); $("input[name='vendorBillNum']").setFocusTo("input[name='gpNum']"); $("input[name='gpNum']").setFocusTo("div.supplierSelector button"); $("input[name='vendorBillNum']").focus(); $(".orderNo").on('blur', function () { var orderNo = $(this).val(); alert(orderNo); var mode = "bookingOrderNoExist"; }); $("input.purchase_commission").keyup(function (e) { var grand_total = $("input.grand_total").val(); var purchase_commission = $("input.purchase_commission").val(); var final_total = grand_total - purchase_commission; $("input.final_total").val(final_total.toFixed(2)); }); $(".box").keydown(function (e) { var item_id = $("select.itemSelector option:selected").val(); var box = $(".box").val(); $.post('db/get-item-details.php', { get_tiles_info: 'yes', itemId: item_id }, function (data) { data = $.parseJSON(data); var pices = (box * data['METERS']).toFixed(2); var meters = (box * data['PIECES']).toFixed(2); $(".picesInBox").val(parseFloat(box * data['PIECES']).toFixed(2)); $(".quantity").val(parseFloat(box * data['METERS']).toFixed(2)); }); }); $(".picesInBox").keydown(function (e) { var item_id = $("select.itemSelector option:selected").val(); var picesInBox = $(".picesInBox").val(); $.post('db/get-item-details.php', { get_tiles_info: 'yes', itemId: item_id }, function (data) { data = $.parseJSON(data); var box = (picesInBox / data['PIECES']).toFixed(2); var meters = (box * data['METERS']).toFixed(2); $(".box").val(parseFloat(box).toFixed(2)); $(".quantity").val(parseFloat(meters).toFixed(2)); }); }); $("select.supplierSelector").change(function () { if ($("input[name=subject]").length) { $("input[name=subject]").focus(); } else { $("div.itemSelector button").focus(); } }); $("input[name=subject]").keydown(function (e) { if (e.keyCode == 13) { $("div.itemSelector button").focus(); } }); $('select.itemSelector').change(function () { $(this).getItemDetails(); }); $('div.itemSelector button').keydown(function (e) { if (e.keyCode == 13) { $("div.itemSelector").popover('destroy'); } if (e.keyCode == 13 && $('.itemSelector option:selected').val() != '') { if ($(".updateMode").length == 0) { $(this).getItemDetails(); } if ($("input.item_description").length) { $("input.item_description").focus(); } else if ($("input.color").length) { $("input.color").focus(); } else if ($("input.width").length) { $("input.width").focus(); } else if ($("input.cubeLength").length) { $("input.cubeLength").focus(); } else if ($("input.cartons").length) { $("input.cartons").focus(); } else if ($("input.ltr").length) { $("input.ltr").focus(); } else if ($("input.qtyFormula").length) { $("input.qtyFormula").focus(); } else { $("input.quantity").focus(); } } }); $("input.item_description").keydown(function (e) { if (e.keyCode == 13) { $(this).parent().next('td').find("input").focus(); } }); $(".width,.height").on('blur change keyup', function () { var w = parseFloat($(".width").val()) || 0; var h = parseFloat($(".height").val()) || 0; var sqf = w * h; $(".sq_feet").val(sqf); }); $(".pices").on('blur change keyup', function () { var sqf = parseFloat($(".sq_feet").val()) || 0; var pices = parseFloat($(".pices").val()) || 1; $(".quantity").val(sqf * pices); }); $("input.width").keydown(function (e) { if (e.keyCode == 13) { $("input.height").focus(); } }); $("input.height").keydown(function (e) { if (e.keyCode == 13) { $("input.pices").focus(); } }); $("input.pices").keydown(function (e) { if (e.keyCode == 13) { $("input.quantity").focus(); } }); $("input.cubeLength").keydown(function (e) { if (e.keyCode == 13) { $("input.cubeWidth").focus(); } }); $("input.cubeLength").keyup(function (e) { cubeCalculate(); }); $("input.cubeWidth").keydown(function (e) { if (e.keyCode == 13) { $("input.cubeHeight").focus(); } }); $("input.cubeWidth").keyup(function (e) { cubeCalculate(); }); $("input.cubeHeight").keydown(function (e) { cubeCalculate(); if (e.keyCode == 13) { $("input.quantity").focus(); } }); $("input.cubeHeight").keyup(function (e) { cubeCalculate(); }); $("input.color").keydown(function (e) { if (e.keyCode == 13) { $(this).parent().next('td').find("input").focus(); } }); $("input.cartons").keydown(function (e) { if (e.keyCode == 13) { if ($("input.cartons").val() == "") { $("input.cartons").val('0'); } $("input.carton_rate").focus(); } }); $("input.carton_rate").keydown(function (e) { if (e.keyCode == 13) { $("input.quantity").focus(); } }); $("input.scheme").keydown(function (e) { if (e.keyCode == 13) { $("input.unitPrice").focus(); } }); $("input.box").keydown(function (e) { if (e.keyCode == 13) { $("input.unitPrice").focus(); } }); $("input.picesInBox").keydown(function (e) { if (e.keyCode == 13) { $("input.unitPrice").focus(); } }); $("input.per_carton").keydown(function (e) { if (e.keyCode == 13) { $("input.quantity").focus(); } }); $("input.ltr").keydown(function (e) { if (e.keyCode == 13) { $("input.fat").focus(); } }); $("input.fat").keydown(function (e) { if (e.keyCode == 13) { $("input.lr").focus(); } }); $("input.lr").keydown(function (e) { if (e.keyCode == 13) { var ltr = parseFloat($("input.ltr").val()) || 0; var fat = parseFloat($("input.fat").val()) || 0; var lr = parseFloat($("input.lr").val()) || 0; var snf = (0.22 * fat + 0.72) + (lr / 4); $("input.snf").val(snf.toFixed(3)); $("input.ts").focus(); } }); $("input.ts").keydown(function (e) { if (e.keyCode == 13) { var ltr = parseFloat($("input.ltr").val()) || 0; var fat = parseFloat($("input.fat").val()) || 0; var snf = parseFloat($("input.snf").val()) || 0; var ts = parseFloat($("input.ts").val()) || 0; var quantityCal = ltr * (fat + snf) / ts; $("input.quantity").val(quantityCal.toFixed(2)); $("input.quantity").focus(); } }); $(document).keydown(function (e) { if (e.keyCode == 32 && e.ctrlKey) { $(".trasactionType").click(); $(".customer_mobile").focus(); } }); $("input.quantity").keyup(function () { stockOs(); }); $("input.quantity").keydown(function (e) { if (e.keyCode == 13) { calculateBoxPiecesInBox(); if ($("input.scheme").length) { $("input.scheme").focus(); } else if ($("input.weight").length) { $("input.weight").focus(); } else if ($("input.initialRate").length) { $("input.initialRate").focus(); } else { $("input.unitPrice").focus(); } } }); $("input.weight").keydown(function (e) { if (e.keyCode == 13) { $("input.unitPrice").focus(); } }); $("input.initialRate").keydown(function (e) { if (e.keyCode == 13) { $("input.item_expense").focus(); } }); $("input.item_expense").keydown(function (e) { if (e.keyCode == 13) { $("input.unitPrice").focus(); } }); $("input.initialRate").keyup(function (e) { $(this).calculateInitialRate(); }); $("input.item_expense").keyup(function (e) { $(this).calculateInitialRate(); }); $("input.unitPrice").keydown(function (e) { if (e.keyCode == 13) { if ($("input.discount").length) { $("input.discount").focus(); } else { $("input.insert_row").focus(); } } }); $("input.discount").keydown(function (e) { if (e.keyCode == 13) { $(this).calculateRowTotal(); if ($("td.taxTd").find("input.taxRate").length) { $("td.taxTd").find("input.taxRate").focus(); } else if ($("input.batch_no").length) { $("input.batch_no").focus(); } else if ($("input.freight").length) { $("input.freight").focus(); } else { $("input.insert_row").focus(); } } }); $("input.batch_no").keydown(function (e) { if (e.keyCode == 13) { $("input.expiry_date").focus(); } }); $("input.expiry_date").keydown(function (e) { if (e.keyCode == 13) { $("input.insert_row").focus(); } }); $("td.taxTd").find("input.taxRate").keydown(function (e) { if (e.keyCode == 13) { $(this).calculateRowTotal(); if ($("input.batch_no").length > 0) { $("input.batch_no").focus(); } else { $("input.insert_row").focus(); } } }); $(".sendSMS").on('click', function () { var purchase_id = $(this).attr('purchase-id'); var mode = 'SMS'; $.post('db/purchase-sms-process.php', { mode: mode, purchase_id: purchase_id }, function (data) { data = $.parseJSON(data); displayMessage(data['MSG']); }); }); $("input.quantity").multiplyTwoFloatsCheckTax("input.unitPrice", "input.totalAmount", "input.subAmount", "input.taxAmount"); $("input.unitPrice").multiplyTwoFloatsCheckTax("input.quantity", "input.totalAmount", "input.subAmount", "input.taxAmount"); $("input.insert_row").keydown(function (e) { if (e.keyCode == 13) { $(this).quickSave(); $(this).calculateRowTotal(); } }); $("input.insert_row").click(function () { $(this).quickSave(); $(this).calculateRowTotal(); }); $(".savePurchase").click(function () { savePurchase(); }); $(".reload_item").click(function () { var selectItemsListFetched = ''; var mode = 'getItemsList'; $.post('db/local-storage.db.php', { mode: mode }, function (data) { $('select.itemSelector').html(''); sessionStorage.setItem('myLocalData', data); myLocalData = sessionStorage.getItem('myLocalData'); var myLocalDataParsed = $.parseJSON(myLocalData); myLocalDataParsed.forEach(myFunctionFetch); $('select.itemSelector').append(selectItemsListFetched); $("select.itemSelector").selectpicker('refresh'); }); function myFunctionFetch(item, index) { var values = item.split('::'); selectItemsListFetched += '<option data-type="I" value="' + values[0] + '">' + values[1] + '</option>'; } }); $(".whole_discount").on('keyup change', function () { $(this).calculateColumnTotals(); }); $(".discount_dom").on('blur change', function () { var item_discount, total_sub_amount, dominate_discount, discount_type; $(this).calculateColumnTotals(); discount_type = $("input.discount_type:checked").val(); total_sub_amount = parseFloat($("td.amountSub").text()) || 0; dominate_discount = $(this).val(); if (dominate_discount == '') { } $("tr.transactions").each(function () { var taxRate = $(this).find("td.taxRate").text(); var taxType = ($(".taxType").is(":checked")) ? "I" : "E"; var thisVal = parseFloat($(this).find("td.quantity").text()) || 0; var thatVal = parseFloat($(this).find("td.unitPrice").text()) || 0; var amount = thisVal * thatVal; var discountAvail = parseFloat($(this).find("td.discount").text()) || 0; item_discount = (amount * dominate_discount) / total_sub_amount; if (discount_type == 'R') { $(this).find("td.discount").text((item_discount).toFixed(0)); } else { $(this).find("td.discount").text(dominate_discount); } var discountPerCentage = 0; if (discount_type == 'R') { discountPerCentage = discountAvail; } else if (discount_type == 'P') { discountPerCentage = amount * (discountAvail / 100); } amount -= discountPerCentage; if (taxRate > 0) { if (taxType == 'I') { taxAmount = amount * (taxRate / 100); } else if (taxType == 'E') { taxAmount = amount * (taxRate / 100); } } else { taxAmount = 0; } var finalAmount = amount + taxAmount; if (taxType == 'I') { amount -= taxAmount; finalAmount -= taxAmount; } $(this).find("td.subAmount").text((amount).toFixed(2)); $(this).find("td.taxAmount").text((taxAmount).toFixed(2)); $(this).find("td.totalAmount").text((finalAmount).toFixed(2)); }); $(this).calculateColumnTotals(); }); $("input.inv_charges").on('change keyup', function (e) { $(this).calculateColumnTotals(); }); $("input.income_tax_percent").on('change keyup', function (e) { $(this).calculateColumnTotals(); }); $("input.freight").keydown(function (e) { if (e.keyCode == 13) { $(this).calculateRowTotal(); $("input.insert_row").focus(); } }); $("input.qtyFormula").keydown(function (e) { if (e.keyCode == 13) { $("input.quantity").focus(); } }); $(".qtyFormula").on('blur', function () { var value = $(this).val(); var formula = $(this).attr('formula'); var myFormula = value + '' + formula; var qtyAfterFarmula = eval(myFormula); $("input.quantity").val(qtyAfterFarmula); }); $(window).keydown(function (e) { if (e.altKey == true && e.keyCode == 73) { e.preventDefault(); $("#form").click(); $("div.itemSelector button").click(); return false; } if (e.altKey == true && e.keyCode == 65) { e.preventDefault(); $("#form").click(); $("div.supplierSelector button").click(); return false; } if (e.altKey == true && e.keyCode == 66) { e.preventDefault(); $("#form").click(); $("input.barcode_input").focus(); return false; } if (e.altKey == true && e.keyCode == 67) { e.preventDefault(); $("#form").click(); $("input.supplier_name").focus(); return false; } if (e.altKey == true && e.keyCode == 77) { e.preventDefault(); $("#form").click(); $("input.customer_mobile").focus(); return false; } if (e.altKey == true && e.keyCode == 68) { e.preventDefault(); $("#form").click(); $("input.whole_discount").focus(); return false; } if (e.altKey == true && e.keyCode == 79) { e.preventDefault(); $("#form").click(); $("input.inv_charges").focus(); return false; } if (e.altKey == true && e.keyCode == 83) { e.preventDefault(); $("#form").click(); savePurchase(); return false; } if (e.altKey == true && e.keyCode == 80) { e.preventDefault(); $("#form").click(); print_method = 'Y'; savePurchase(); return false; } if (e.altKey == true && e.keyCode == 78) { e.preventDefault(); $(".new_form_button").click(); return false; } if (e.altKey == true && e.keyCode == 69) { e.preventDefault(); $("#form").click(); $("input[name='rDate']").focus(); return false; } if (e.altKey == true && e.keyCode == 82) { e.preventDefault(); $("#form").click(); $("input[name='vendorBillNum']").focus(); return false; } if (e.altKey == true && e.keyCode == 71) { e.preventDefault(); $("#form").click(); $("input[name='gpNum']").focus(); return false; } if (e.altKey == true && e.keyCode == 81) { e.preventDefault(); $("#form").click(); $("input.quantity").focus(); return false; } }); }); $(document).ready(function () { calculateDate(); }); $("input[name=recoveryDate]").change(function () { calculateDate(); }); function calculateDate() { var invDate = $(".purchaseDate").val(); var recDate = $("input[name=recoveryDate]").val() || "0000-00-00"; if (recDate == '0000-00-00') { return; } var date1 = getDateObject(invDate); var date2 = getDateObject(recDate); var days = (date2 - date1) / 86400000; $("input[name=noOfDays]").val(days); } function getDateObject(str) { var arr = str.split("-"); return new Date(arr[2], arr[1], arr[0]); }</script>
+    <script type="text/javascript" src="resource/scripts/items-local-storage.js"></script>
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+    </div>
+</body>
+
+</html>

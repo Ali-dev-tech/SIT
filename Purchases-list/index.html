@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>SIT Solutions</title>
+    <link rel="stylesheet"
+        href="http://frontierfoundation.sitsbook.info/resource/css/A.reset.css+style.css+invalid.css+form.css+tabs.css+reports.css+font-awesome.css+bootstrap.min.css+bootstrap-select.css,Mcc.qonYrkLRZp.css.pagespeed.cf.YwXIcZS6TI.css"
+        type="text/css" media="screen" />
+
+
+
+
+
+
+
+
+    <link rel="stylesheet"
+        href="http://frontierfoundation.sitsbook.info/resource/css/A.jquery-ui,,_jquery-ui.min.css+table-style.css,Mcc.fVGf0pTkjQ.css.pagespeed.cf.lzegPgl4Kc.css"
+        type="text/css" />
+
+
+    <script
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/jquery.1.11.min.js.pagespeed.jm.hPNW4XMyyU.js"></script>
+    <script
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/jquery-ui.min.js.pagespeed.jm.kliCpEL7OZ.js"></script>
+    <script
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/bootstrap-select.js.pagespeed.jm.za2R-lqzCJ.js"></script>
+    <script
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/bootstrap.min.js+sideBarFunctions.js.pagespeed.jc.r2jLls-rRD.js"></script>
+    <script>eval(mod_pagespeed_Srl5rCFr7A);</script>
+    <script>eval(mod_pagespeed_Q0PFI10iCn);</script>
+    <script
+        src="http://frontierfoundation.sitsbook.info/resource/scripts/configuration.js+inventory.configuration.js+tab.js.pagespeed.jc.LPqZ1Ee19Q.js"></script>
+    <script>eval(mod_pagespeed_zNaeWdj6CZ);</script>
+    <script>eval(mod_pagespeed_1PME9HiPL0);</script>
+    <script>eval(mod_pagespeed_Zj5mibmjo4);</script>
+    <script>$(document).ready(function () { $(".selectpicker").selectpicker(); $("a.pointer").click(function () { $(this).delete_main_list_record("db/del-inventory.php"); }); $("td[data-items-list]").on("mouseover", function () { var data = $(this).attr("data-items-list"); $(this).text(data); }); $("td[data-items-list]").on("mouseout", function () { var data = $(this).attr("data-items-list"); $(this).text(data.substr(0, 40)); }); });</script>
+</head>
+
+<body>
+    <div id="body-wrapper">
+        <div id="sidebar">
+            <input type="hidden" value="purchased-list.php" class="this_file_name" />
+            <input type="hidden" value="010101001" class="cash_default" />
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="hamburger hamburger--3dx-r pull-left toggleSideBar"><span class="hamburger-box"><span
+                                    class="hamburger-inner"></span></span></a>
+                        <a href="dashboard.php" class="navbar-brand">
+                            <img alt="Company logo" class="logo_small"
+                                src="http://frontierfoundation.sitsbook.info/resource/images/sitsbook-logo/xlogo.png.pagespeed.ic.yc8eysGIR6.webp" /></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+
+
+                            <li><a class="notification-icons" href="change-password.php">
+                                    <i class="fa fa-user"></i> <span>Frontier Foundation</span> </a>
+                            </li>
+                            <li><a class="notification-icons" href="logout.php?out" data-toggle="tooltip"
+                                    title="Logout"><i class="fa fa-sign-out"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <aside>
+                <nav class='site-nav'>
+                    <ul id="main-nav">
+                        <li><a href="dashboard.php" class="nav-top-item no-submenu"><i class="fa fa-dashboard"></i>
+                                Dashboard</a></li>
+                        <li><a class="nav-top-item"><i class="fa fa-book"></i> Cash / Cheque</a>
+                            <ul>
+                                <li><a href="create-voucher.php">Journal Voucher</a></li>
+                                <li><a href="cash-book-voucher.php">Cash Book</a></li>
+                                <li><a href="cash-receipt.php">Cash Receipt</a></li>
+                                <li><a href="cash-payment.php">Cash Payment</a></li>
+                                <li><a href="bank-receipt.php">Bank Receipt</a></li>
+                                <li><a href="bank-payment.php">Bank Payment</a></li>
+                                <li><a href="posted-enteries.php">Search Vouchers</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="nav-top-item"><i class="fa fa-shopping-cart"></i> Purchases</a>
+                            <ul>
+                                <li><a href="purchase-details.php">Purchases</a></li>
+                                <li><a href="purchase-return-details.php">Purchase Returns</a></li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!--<li><a class="nav-top-item no-submenu" href="nozzle-sales-records-form-machine.php">-->
+                        <!--	<i class="fa fa-cog"></i> Nozzles Bills</a></li>-->
+
+
+                        <li><a class="nav-top-item"><i class="fa fa-angle-double-right"></i> Sales</a>
+                            <ul>
+
+
+
+                                <!-- <li><a href="sale-orders.php">Sale Orders</a></li> -->
+                                <li><a href="sale-details.php">Sales</a></li>
+                                <li><a href="sales-return-details.php">Sale Returns</a></li>
+
+
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li><a class="nav-top-item"><i class="fa fa-cog"></i> Petrol Pump</a>
+                            <ul>
+                                <li><a href="pp-nozzle-reading-form.php"> Nozzle Reading Form</a></li>
+                                <li><a href="pp-nozzle-reading-list.php?tab=list"> Nozzle Reading List</a></li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+                        <li><a class="nav-top-item"><i class="fa fa-angle-double-right"></i> Embroidery</a>
+                            <ul>
+                            </ul>
+                        </li>
+
+
+                        <!-- <li><a class="nav-top-item"><i class="fa fa-money"></i>Cheques</a> -->
+                        <!-- <ul> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+
+
+
+
+                        <li><a href="financial-reports.php" class="nav-top-item no-submenu"><i
+                                    class="fa fa-calculator"></i> Reports</a></li>
+                        <li><a href="settings.php" class="nav-top-item no-submenu"><i class="fa fa-cog"></i>
+                                Settings</a></li>
+
+
+
+
+
+                        <li><a href="backup.php" class="nav-top-item no-submenu"><i class="fa fa-database"></i>
+                                Backup</a></li>
+
+
+                        <li><a href="logout.php?out" class="nav-top-item no-submenu"><i class="fa fa-sign-out"></i> Sign
+                                Out</a></li>
+                    </ul> <!-- End #main-nav -->
+                </nav>
+            </aside>
+            <div class="clear"></div>
+
+            <!-- get sms balance -->
+            <script
+                type="text/javascript">setTimeout(function () { var mode = 'smsBalance'; $.post('db/sms-info-process.php', { mode: mode }, function (data) { data = $.parseJSON(data); $('span.sms_count').html(data['SMS']); }); }, 5000);</script>
+        </div> <!-- End #sidebar -->
+        <div class="content-box-top">
+            <div class="content-box-header">
+                <p>Purchased List - 2 Records</p>
+                <span id="tabPanel">
+                    <div class="tabPanel">
+                        <div class="tabSelected" id="tab1" onClick="tab('1', '1', '2');">List</div>
+                        <div class="tab" id="tab2" onClick="tab('2', '1', '2');">Search</div>
+                        <a href="purchase-details.php">
+                            <div class="tab">New</div>
+                        </a>
+                    </div>
+                </span>
+                <div class="clear"></div>
+            </div> <!-- End .content-box-header -->
+            <div class="content-box-content">
+                <div id="bodyTab1" style="display:block;">
+                    <table class="table table-hover tableStyle">
+                        <thead>
+                            <tr>
+
+
+                                <th style="text-align:center;width:5%;">Bill#</th>
+                                <th style="text-align:center;width:5%;">Vnd/Bill#</th>
+                                <th style="text-align:center;width:5%;">GP#</th>
+                                <th style="text-align:center;width:10%;">Date</th>
+                                <th style="text-align:center;width:15%;">Supplier</th>
+                                <th style="text-align:center;width:15%;">Items</th>
+                                <th style="text-align:center;width:5%;">Cartons</th>
+                                <th style="text-align:center;width:5%;">Quantity</th>
+                                <th style="text-align:center;width:10%;">Amount</th>
+                                <th style="text-align:center;width:10%;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-row-id="2" data-main-id="2">
+                                <td style="text-align:center">2</td>
+                                <td style="text-align:center"></td>
+                                <td style="text-align:center"></td>
+                                <td style="text-align:center">02-Jul 2021</td>
+                                <td style="text-align:left">PSO</td>
+                                <td style="text-align:left;" class="pl-10" data-items-list="desel *">desel *</td>
+                                <td style="text-align:center">0.00</td>
+                                <td style="text-align:center">32000</td>
+                                <td style="text-align:center">3,485,440.00</td>
+                                <td style="text-align:center">
+                                    <a id="view_button" href="purchase-details.php?id=2" title="Edit"><i
+                                            class="fa fa-pencil"></i></a>
+                                    <!-- <a id="view_button" target="_blank" href="purchase-invoice.php?id=2" title="Print"><i class="fa fa-print"></i></a> -->
+                                    <a id="view_button" target="_blank" href="voucher-print.php?id=3" title="Print">
+                                        JV</a>
+                                    <a do="2" class="pointer" title="Delete"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
+                            <tr data-row-id="1" data-main-id="1">
+                                <td style="text-align:center">1</td>
+                                <td style="text-align:center">2601310</td>
+                                <td style="text-align:center"></td>
+                                <td style="text-align:center">20-Jun 2021</td>
+                                <td style="text-align:left">pso</td>
+                                <td style="text-align:left;" class="pl-10" data-items-list="16000">16000</td>
+                                <td style="text-align:center">0.00</td>
+                                <td style="text-align:center">16000</td>
+                                <td style="text-align:center">1,700,160.00</td>
+                                <td style="text-align:center">
+                                    <a id="view_button" href="purchase-details.php?id=1" title="Edit"><i
+                                            class="fa fa-pencil"></i></a>
+                                    <!-- <a id="view_button" target="_blank" href="purchase-invoice.php?id=1" title="Print"><i class="fa fa-print"></i></a> -->
+                                    <a id="view_button" target="_blank" href="voucher-print.php?id=2" title="Print">
+                                        JV</a>
+                                    <a do="1" class="pointer" title="Delete"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-xs-12 text-center">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!--End bodyTab1-->
+                <div style="height:0px;clear:both"></div>
+                <div id="bodyTab2" style="display:none;">
+                    <div id="form">
+                        <form method="get" action="/purchased-list.php">
+
+                            <div class="caption"></div>
+                            <div class="message red"></div>
+                            <div class="clear"></div>
+
+                            <div class="caption">From Date</div>
+                            <div class="field">
+                                <input type="text" value="" name="from_date" class="form-control datepicker"
+                                    style="width: 150px;" />
+
+                                <!-- <input type="date" name="from_date" value="" class="form-control" style="width:160px; text-align: center !important;"> -->
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="caption">To Date</div>
+                            <div class="field">
+                                <input type="text" value="05-07-2021" name="to_date" class="form-control datepicker"
+                                    style="width: 150px;" />
+                            </div>
+                            <div class="clear"></div>
+
+
+                            <div class="caption">Bill #</div>
+                            <div class="field">
+                                <input type="text" value="" name="billNum" class="form-control" />
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="caption">Vendor Bill #</div>
+                            <div class="field">
+                                <input type="text" value="" name="vendor_bill_no" class="form-control text-center" />
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="caption">Gate Pass #</div>
+                            <div class="field">
+                                <input type="text" value="" name="gate_pass_no" class="form-control text-center" />
+                            </div>
+                            <div class="clear"></div>
+
+
+                            <div class="caption">Supplier</div>
+                            <div class="field" style="width:305px;">
+                                <select class="selectpicker form-control" name='supplierAccCode'
+                                    data-style="btn-default" data-live-search="true" style="border:none">
+                                    <option selected value=""></option>
+                                    <option data-subtext="010101001" value="010101001">Cash in Hand A/c Admin</option>
+                                    <option data-subtext="0101010002" value="0101010002">Cash In Hand A/c Malik javed
+                                        sgoo</option>
+                                    <option data-subtext="0401010002" value="0401010002">pso</option>
+                                    <option data-subtext="0401010003" value="0401010003">PSO</option>
+                                </select>
+                            </div>
+                            <div class="clear"></div>
+
+
+
+
+                            <div class="caption"></div>
+                            <div class="field">
+                                <input type="submit" value="Search" name="search" class="button" />
+                            </div>
+                            <div class="clear"></div>
+                        </form>
+                    </div>
+                    <!--form-->
+                </div> <!-- End bodyTab2 -->
+            </div> <!-- End .content-box-content -->
+        </div> <!-- End .content-box -->
+    </div>
+    <!--body-wrapper-->
+    <div id="xfade"></div>
+</body>
+
+</html>
+
+<script>$(document).ready(function () { $(".shownCode,.loader").hide(); $("input.supplierTitle").keyup(function () { $(this).fetchSupplierCodeToSpan(".supplierAccCode", ".shownCode", ".loader"); }); $(window).keydown(function (e) { if (e.keyCode == 113) { e.preventDefault(); window.location.href = "purchase-details.php"; } }); });</script>

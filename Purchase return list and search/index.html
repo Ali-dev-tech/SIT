@@ -1,0 +1,249 @@
+<html>
+    
+<!DOCTYPE html 
+>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>SIT Solutions</title>
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/A.reset.css+style.css+invalid.css+form.css+tabs.css+reports.css+font-awesome.css+bootstrap.min.css+bootstrap-select.css,Mcc.qonYrkLRZp.css.pagespeed.cf.YwXIcZS6TI.css" type="text/css" media="screen"/>
+    
+    
+    
+    
+    
+    
+    
+    
+    <link href="http://frontierfoundation.sitsbook.info/resource/css/jquery-ui/A.jquery-ui.min.css.pagespeed.cf.voPvNTyY26.css" rel="stylesheet" type="text/css"/>
+    <style>.caption{padding:5px!important}td.itemName{padding-left:10px!important}td.quantity{position:relative;cursor:pointer}td,th{padding:10px 5px!important;border:1px solid #ccc!important}input.error{background-color:rgba(255,0,0,.1)}.form-bottle-bottom .caption{margin-top:0!important}table td,table th{padding:10px!important}table thead th{text-align:center!important}table tbody th{text-align:center!important}table tr.totals th{text-align:center!important}table tr.totals td{font-weight:900;text-align:center!important}</style>
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/jquery.1.11.min.js"></script>
+    <script src="http://frontierfoundation.sitsbook.info/resource/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/bootstrap-select.js"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/configuration.js"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/inventory.configuration.js"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/tab.js"></script>
+    <script>$(document).ready(function(){$(".selectpicker").selectpicker();$("a.pointer").click(function(){$(this).delete_main_list_record("db/del-inventory-return.php");});});</script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/sideBarFunctions.js"></script>
+</head>
+<body>
+    <div id="body-wrapper">
+        <div id="sidebar">
+            <input type="hidden" value="purchase-return-list.php" class="this_file_name"/>
+<input type="hidden" value="010101001" class="cash_default"/>
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="hamburger hamburger--3dx-r pull-left toggleSideBar"><span class="hamburger-box"><span class="hamburger-inner"></span></span></a>
+			<a href="dashboard.php" class="navbar-brand">
+				<img alt="Company logo" class="logo_small" src="http://frontierfoundation.sitsbook.info/resource/images/sitsbook-logo/xlogo.png.pagespeed.ic.yc8eysGIR6.webp"/></a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				
+								
+				<li><a class="notification-icons" href="change-password.php">
+					<i class="fa fa-user"></i> <span>Frontier  Foundation</span> </a>
+				</li>
+				<li><a class="notification-icons" href="logout.php?out" data-toggle="tooltip" title="Logout"><i class="fa fa-sign-out"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<aside>
+	<nav class='site-nav'>
+		<ul id="main-nav">
+				<li><a href="dashboard.php" class="nav-top-item no-submenu"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+			<li><a class="nav-top-item"><i class="fa fa-book"></i> Cash / Cheque</a>
+				<ul>
+							<li><a href="create-voucher.php">Journal Voucher</a></li>
+								<li><a href="cash-book-voucher.php">Cash Book</a></li>
+							<li><a href="cash-receipt.php">Cash Receipt</a></li>
+								<li><a href="cash-payment.php">Cash Payment</a></li>
+								<li><a href="bank-receipt.php">Bank Receipt</a></li>
+								<li><a href="bank-payment.php">Bank Payment</a></li>
+								<li><a href="posted-enteries.php">Search Vouchers</a></li>
+					</ul>
+			</li>
+					<li><a class="nav-top-item"><i class="fa fa-shopping-cart"></i> Purchases</a>
+				<ul>
+	<li><a href="purchase-details.php">Purchases</a></li><li><a href="purchase-return-details.php">Purchase Returns</a></li>
+					</ul>
+			</li>
+
+			
+			
+
+	
+
+	
+
+	
+
+
+
+							<!--<li><a class="nav-top-item no-submenu" href="nozzle-sales-records-form-machine.php">-->
+				<!--	<i class="fa fa-cog"></i> Nozzles Bills</a></li>-->
+			
+
+			<li><a class="nav-top-item"><i class="fa fa-angle-double-right"></i> Sales</a>
+				<ul>
+
+	
+
+									<!-- <li><a href="sale-orders.php">Sale Orders</a></li> -->
+						<li><a href="sale-details.php">Sales</a></li><li><a href="sales-return-details.php">Sale Returns</a></li>
+
+
+					</ul>
+			</li>
+
+	
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+			
+			<li><a class="nav-top-item"><i class="fa fa-cog"></i> Petrol Pump</a>
+				<ul>
+					<li><a href="pp-nozzle-reading-form.php"> Nozzle Reading Form</a></li>
+					<li><a href="pp-nozzle-reading-list.php?tab=list"> Nozzle Reading List</a></li>
+				</ul>
+			</li>
+	
+	
+
+	
+
+	
+	
+
+	
+			<li><a class="nav-top-item"><i class="fa fa-angle-double-right"></i> Embroidery</a>
+				<ul>
+							</ul>
+					</li>
+					
+	
+			<!-- <li><a class="nav-top-item"><i class="fa fa-money"></i>Cheques</a> -->
+				<!-- <ul> -->
+	
+					<!-- </ul> -->
+			<!-- </li> -->
+
+	
+
+	
+					<li><a href="financial-reports.php" class="nav-top-item no-submenu"><i class="fa fa-calculator"></i> Reports</a></li>
+						<li><a href="settings.php" class="nav-top-item no-submenu"><i class="fa fa-cog"></i> Settings</a></li>
+	
+
+	
+	
+
+				<li><a href="backup.php" class="nav-top-item no-submenu"><i class="fa fa-database"></i> Backup</a></li>
+	
+
+		<li><a href="logout.php?out" class="nav-top-item no-submenu"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+	</ul> <!-- End #main-nav -->
+	</nav>
+</aside>
+<div class="clear"></div>
+
+<!-- get sms balance -->
+<script type="text/javascript">setTimeout(function(){var mode='smsBalance';$.post('db/sms-info-process.php',{mode:mode},function(data){data=$.parseJSON(data);$('span.sms_count').html(data['SMS']);});},5000);</script>        </div> <!-- End #sidebar -->
+        <div class="content-box-top">
+            <div class="content-box-header">
+                <p>Purchase Return List - 0 Records </p>
+                <span id="tabPanel">
+                    <div class="tabPanel">
+                        <div class="tabSelected" id="tab1" onClick="tab('1', '1', '2');">List</div>
+                        <div class="tab" id="tab2" onClick="tab('2', '1', '2');">Search</div>
+                        <a href="purchase-return-details.php"><div class="tab">Return</div></a>
+                    </div>
+                </span>
+                <div class="clear"></div>
+            </div> <!-- End .content-box-header -->
+
+            <div class="content-box-content">
+
+                <div id="bodyTab1" style="display:block;">
+                    <table width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                               <th width="5%" style="text-align:center">Sr#</th>
+                               <th width="5%" style="text-align:center">Bill#</th>
+								                               <th width="10%" style="text-align:center">ReturnDate</th>
+                               <th width="15%" style="text-align:left !important;">Account</th>
+                               <th width="15%" style="text-align:left !important;">Items</th>
+                                                               <th width="10%">Quantity</th>
+                               <th width="10%">Amount</th>
+                               <th width="10%">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+							<tr>
+								<td class="text-center !important;" colspan="8">No Records Found!</td>
+							</tr>
+                        </tbody>
+                    </table>
+                    <div class="col-xs-12 text-center">
+                        <nav>
+                          <ul class="pagination">
+                    </div>
+                </div> <!--End bodyTab1-->
+                <div style="height:0px;clear:both"></div>
+                <div id="bodyTab2" style="display:none;">
+                    <div id="form">
+                    <form method="get" action="/purchase-return-list.php">
+                        <div class="title" style="font-size:20px; margin-bottom:20px">Search receipt inventory</div>
+
+                        <div class="caption"></div>
+                        <div class="message red"></div>
+                        <div class="clear"></div>
+
+                        <div class="caption">Supplier</div>
+                        <div class="field" style="width:305px;">
+                        	<select class="selectpicker form-control" name='supplierAccCode' data-style="btn-default" data-live-search="true" style="border:none">
+                               <option selected value=""></option>
+                               <option data-subtext="0401010002" value="0401010002">pso</option>
+                               <option data-subtext="0401010003" value="0401010003">PSO</option>
+                            </select>
+                        </div>
+                        <div class="clear"></div>
+
+                        <div class="caption">Memo No</div>
+                        <div class="field">
+                        	<input type="text" value="" name="billNum" class="form-control"/>
+                        </div>
+                        <div class="clear"></div>
+												
+                        <div class="caption"></div>
+                        <div class="field">
+                            <input type="submit" value="Search" name="search" class="button"/>
+                        </div>
+                        <div class="clear"></div>
+                    </form>
+                    </div><!--form-->
+                </div> <!-- End bodyTab2 -->
+            </div> <!-- End .content-box-content -->
+        </div> <!-- End .content-box -->
+	</div><!--body-wrapper-->
+    <div id="xfade"></div>
+</body>
+</html>
+
+<script>$(document).ready(function(){$(".shownCode,.loader").hide();$("input.supplierTitle").keyup(function(){$(this).fetchSupplierCodeToSpan(".supplierAccCode",".shownCode",".loader");});$(window).keydown(function(e){if(e.keyCode==113){e.preventDefault();window.location.href="inventory-details.php";}});$("#bodyTab2 .dropdown-toggle").focus();$("#bodyTab2 billNum").setFocusTo("#bodyTab2 input[type='submit']");$("#bodyTab2 select").change(function(){$("#bodyTab2 input[name='billNum']").focus();});});$(function(){$("#fromDatepicker").datepicker({dateFormat:'dd-mm-yy',showAnim:'show',changeMonth:true,changeYear:true,yearRange:'2000:+10'});$("#toDatepicker").datepicker({dateFormat:'dd-mm-yy',showAnim:'show',changeMonth:true,changeYear:true,yearRange:'2000:+10'});});tab('2','1','2');</script>
+
+</html>

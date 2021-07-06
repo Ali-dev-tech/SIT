@@ -1,0 +1,680 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>SIT Solutions</title>
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/reset.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/invalid.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/form.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/tabs.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/reports.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/font-awesome.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/bootstrap-select.css" type="text/css" media="screen">
+    <link href="http://frontierfoundation.sitsbook.info/resource/css/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="http://frontierfoundation.sitsbook.info/resource/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://frontierfoundation.sitsbook.info/resource/css/bootstrap-nav-wizard.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/table-style.css" type="text/css">
+
+    <style>
+        html {}
+
+        .ui-tooltip {
+            font-size: 12px;
+            padding: 5px;
+            box-shadow: none;
+            border: 1px solid #999
+        }
+
+        .input_sized {
+            float: left;
+            width: 152px;
+            padding-left: 5px;
+            border: 1px solid #ccc;
+            height: 30px;
+            -webkit-box-shadow: #f4f4f4 0 0 0 2px;
+            border: 1px solid #ddd;
+            border-top-right-radius: 3px;
+            border-top-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+            -moz-border-radius-topleft: 3px;
+            -moz-border-radius-topright: 3px;
+            -moz-border-radius-bottomleft: 3px;
+            -moz-border-radius-bottomright: 5px;
+            -webkit-border-top-left-radius: 3px;
+            -webkit-border-top-right-radius: 3px;
+            -webkit-border-bottom-left-radius: 3px;
+            -webkit-border-bottom-right-radius: 3px;
+            box-shadow: 0 0 2px #eee;
+            transition: box-shadow 300ms;
+            -webkit-transition: box-shadow 300ms
+        }
+
+        .input_sized:hover {
+            border-color: #9ecaed;
+            box-shadow: 0 0 2px #9ecaed
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa
+        }
+
+        tr:nth-child(odd) {
+            background: #fff
+        }
+
+        tr:hover {
+            background-color: #ff9 !important
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/73f6a8d89f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/jquery.1.11.min.js"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/jquery.1.11.min.js"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/bootstrap-select.js"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/configuration.js"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/tab.js"></script>
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/sideBarFunctions.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/printThis.js"></script>
+    <script
+        type="text/javascript">$(window).on('load', function () { $(".printThis").click(function () { if ($("div.tablePage").length == 0) { var MaxHeight = 450; var RunningHeight = 0; var PageNo = 1; $('table.tableBreak>tbody>tr').each(function () { if (RunningHeight + $(this).height() > MaxHeight) { RunningHeight = 0; PageNo += 1; } RunningHeight += $(this).height(); $(this).attr("data-page-no", PageNo); }); var tableHeader = $(".tHeader").html(); var tableFooter = $(".tableFooter").html(); var repoDate = $(".repoDate").text(); $(".tHeader").remove(); $(".tableFooter").remove(); $(".repoDate").remove(); for (i = 1; i <= PageNo; i++) { $('table.tableBreak').parent().append("<div class='tablePage'><table id='Table" + i + "' class='newTable'><thead></thead><tbody></tbody></table><div class='pageFoooter'><p style=\"float:left; margin-left:0px; font-size:14px\" class=\"repoGen\">" + repoDate + "</p><span class='pazeNum'>Page. " + i + "/" + PageNo + "</span></div><div class='clear'></div></div>"); var rows = $('table tr[data-page-no="' + i + '"]'); $('#Table' + i).find("thead").append(tableHeader); $('#Table' + i).find("tbody").append(rows); } $(".newTable").last().append(tableFooter); $('table.tableBreak').remove(); $("div.tablePage").each(function (i, e) { $(this).prepend($(".pageHeader").first().clone()); }); $(".pageHeader").first().remove(); } $(".printTable").printThis({ debug: false, importCSS: false, printContainer: true, loadCSS: 'resource/css/reports-horizontal.css', pageTitle: "Sit Solution", removeInline: false, printDelay: 500, header: null }); }); if ($(".carton_th").length) { var colspan = $(".tHeader .carton_th").prevAll().length; } else { var colspan = $(".tHeader th.qty_th").prevAll().length; } $(".total_tf").attr('colspan', colspan); $('select').selectpicker(); });</script>
+</head>
+
+<body style="" cz-shortcut-listen="true">
+    <div id="body-wrapper">
+        <div id="sidebar">
+            <input type="hidden" value="stocks-purchase-report.php" class="this_file_name">
+            <input type="hidden" value="010101001" class="cash_default">
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="hamburger hamburger--3dx-r pull-left toggleSideBar"><span class="hamburger-box"><span
+                                    class="hamburger-inner"></span></span></a>
+                        <a href="dashboard.php" class="navbar-brand">
+                            <script data-pagespeed-no-defer="">//<![CDATA[
+                                (function () { for (var g = "function" == typeof Object.defineProperties ? Object.defineProperty : function (b, c, a) { if (a.get || a.set) throw new TypeError("ES3 does not support getters and setters."); b != Array.prototype && b != Object.prototype && (b[c] = a.value) }, h = "undefined" != typeof window && window === this ? this : "undefined" != typeof global && null != global ? global : this, k = ["String", "prototype", "repeat"], l = 0; l < k.length - 1; l++) { var m = k[l]; m in h || (h[m] = {}); h = h[m] } var n = k[k.length - 1], p = h[n], q = p ? p : function (b) { var c; if (null == this) throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined"); c = this + ""; if (0 > b || 1342177279 < b) throw new RangeError("Invalid count value"); b |= 0; for (var a = ""; b;)if (b & 1 && (a += c), b >>>= 1) c += c; return a }; q != p && null != q && g(h, n, { configurable: !0, writable: !0, value: q }); var t = this; function u(b, c) { var a = b.split("."), d = t; a[0] in d || !d.execScript || d.execScript("var " + a[0]); for (var e; a.length && (e = a.shift());)a.length || void 0 === c ? d[e] ? d = d[e] : d = d[e] = {} : d[e] = c }; function v(b) { var c = b.length; if (0 < c) { for (var a = Array(c), d = 0; d < c; d++)a[d] = b[d]; return a } return [] }; function w(b) { var c = window; if (c.addEventListener) c.addEventListener("load", b, !1); else if (c.attachEvent) c.attachEvent("onload", b); else { var a = c.onload; c.onload = function () { b.call(this); a && a.call(this) } } }; var x; function y(b, c, a, d, e) { this.h = b; this.j = c; this.l = a; this.f = e; this.g = { height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight, width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth }; this.i = d; this.b = {}; this.a = []; this.c = {} } function z(b, c) { var a, d, e = c.getAttribute("data-pagespeed-url-hash"); if (a = e && !(e in b.c)) if (0 >= c.offsetWidth && 0 >= c.offsetHeight) a = !1; else { d = c.getBoundingClientRect(); var f = document.body; a = d.top + ("pageYOffset" in window ? window.pageYOffset : (document.documentElement || f.parentNode || f).scrollTop); d = d.left + ("pageXOffset" in window ? window.pageXOffset : (document.documentElement || f.parentNode || f).scrollLeft); f = a.toString() + "," + d; b.b.hasOwnProperty(f) ? a = !1 : (b.b[f] = !0, a = a <= b.g.height && d <= b.g.width) } a && (b.a.push(e), b.c[e] = !0) } y.prototype.checkImageForCriticality = function (b) { b.getBoundingClientRect && z(this, b) }; u("pagespeed.CriticalImages.checkImageForCriticality", function (b) { x.checkImageForCriticality(b) }); u("pagespeed.CriticalImages.checkCriticalImages", function () { A(x) }); function A(b) { b.b = {}; for (var c = ["IMG", "INPUT"], a = [], d = 0; d < c.length; ++d)a = a.concat(v(document.getElementsByTagName(c[d]))); if (a.length && a[0].getBoundingClientRect) { for (d = 0; c = a[d]; ++d)z(b, c); a = "oh=" + b.l; b.f && (a += "&n=" + b.f); if (c = !!b.a.length) for (a += "&ci=" + encodeURIComponent(b.a[0]), d = 1; d < b.a.length; ++d) { var e = "," + encodeURIComponent(b.a[d]); 131072 >= a.length + e.length && (a += e) } b.i && (e = "&rd=" + encodeURIComponent(JSON.stringify(B())), 131072 >= a.length + e.length && (a += e), c = !0); C = a; if (c) { d = b.h; b = b.j; var f; if (window.XMLHttpRequest) f = new XMLHttpRequest; else if (window.ActiveXObject) try { f = new ActiveXObject("Msxml2.XMLHTTP") } catch (r) { try { f = new ActiveXObject("Microsoft.XMLHTTP") } catch (D) { } } f && (f.open("POST", d + (-1 == d.indexOf("?") ? "?" : "&") + "url=" + encodeURIComponent(b)), f.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), f.send(a)) } } } function B() { var b = {}, c; c = document.getElementsByTagName("IMG"); if (!c.length) return {}; var a = c[0]; if (!("naturalWidth" in a && "naturalHeight" in a)) return {}; for (var d = 0; a = c[d]; ++d) { var e = a.getAttribute("data-pagespeed-url-hash"); e && (!(e in b) && 0 < a.width && 0 < a.height && 0 < a.naturalWidth && 0 < a.naturalHeight || e in b && a.width >= b[e].o && a.height >= b[e].m) && (b[e] = { rw: a.width, rh: a.height, ow: a.naturalWidth, oh: a.naturalHeight }) } return b } var C = ""; u("pagespeed.CriticalImages.getBeaconData", function () { return C }); u("pagespeed.CriticalImages.Run", function (b, c, a, d, e, f) { var r = new y(b, c, a, e, f); x = r; d && w(function () { window.setTimeout(function () { A(r) }, 0) }) }); })(); pagespeed.CriticalImages.Run('/mod_pagespeed_beacon', 'http://frontierfoundation.sitsbook.info/stocks-purchase-report.php?fromDate=&toDate=06-07-2021&supplier=&item_category=&item_subcategory=&item=&user_id=&vBillNo=&gatePassNo=&color=&repoType=P&with_tax=&unregistered_tax=&search=Search', 'oG-7lxx8_G', true, false, 'aaGxCHXkj9o');
+    //]]></script><img alt="Company logo" class="logo_small" src="http://frontierfoundation.sitsbook.info/resource/images/sitsbook-logo/logo.png"
+                                data-pagespeed-url-hash="1196390074"
+                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                        </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+
+
+                            <li><a class="notification-icons" href="change-password.php">
+                                    <i class="fa fa-user"></i> <span>Frontier Foundation</span> </a>
+                            </li>
+                            <li><a class="notification-icons" href="logout.php?out" data-toggle="tooltip"
+                                    title="Logout"><i class="fa fa-sign-out"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <aside>
+                <nav class="site-nav">
+                    <ul id="main-nav">
+                        <li><a href="dashboard.php" class="nav-top-item no-submenu hvr-underline-from-center"><i
+                                    class="fa fa-dashboard"></i> Dashboard</a></li>
+                        <li><a class="nav-top-item hvr-underline-from-center"><i class="fa fa-book"></i> Cash /
+                                Cheque</a>
+                            <ul style="display: none;">
+                                <li><a href="create-voucher.php">Journal Voucher</a></li>
+                                <li><a href="cash-book-voucher.php">Cash Book</a></li>
+                                <li><a href="cash-receipt.php">Cash Receipt</a></li>
+                                <li><a href="cash-payment.php">Cash Payment</a></li>
+                                <li><a href="bank-receipt.php">Bank Receipt</a></li>
+                                <li><a href="bank-payment.php">Bank Payment</a></li>
+                                <li><a href="posted-enteries.php">Search Vouchers</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="nav-top-item hvr-underline-from-center"><i class="fa fa-shopping-cart"></i>
+                                Purchases</a>
+                            <ul style="display: none;">
+                                <li><a href="purchase-details.php">Purchases</a></li>
+                                <li><a href="purchase-return-details.php">Purchase Returns</a></li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!--<li><a class="nav-top-item no-submenu" href="nozzle-sales-records-form-machine.php">-->
+                        <!--	<i class="fa fa-cog"></i> Nozzles Bills</a></li>-->
+
+
+                        <li><a class="nav-top-item hvr-underline-from-center"><i class="fa fa-angle-double-right"></i>
+                                Sales</a>
+                            <ul style="display: none;">
+
+
+
+                                <!-- <li><a href="sale-orders.php">Sale Orders</a></li> -->
+                                <li><a href="sale-details.php">Sales</a></li>
+                                <li><a href="sales-return-details.php">Sale Returns</a></li>
+
+
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <li><a class="nav-top-item hvr-underline-from-center"><i class="fa fa-cog"></i> Petrol Pump</a>
+                            <ul style="display: none;">
+                                <li><a href="pp-nozzle-reading-form.php"> Nozzle Reading Form</a></li>
+                                <li><a href="pp-nozzle-reading-list.php?tab=list"> Nozzle Reading List</a></li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+                        <li><a class="nav-top-item hvr-underline-from-center" style="display: none;"><i
+                                    class="fa fa-angle-double-right"></i> Embroidery</a>
+                            <ul style="display: none;">
+                            </ul>
+                        </li>
+
+
+                        <!-- <li><a class="nav-top-item"><i class="fa fa-money"></i>Cheques</a> -->
+                        <!-- <ul> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+
+
+
+
+                        <li><a href="financial-reports.php" class="nav-top-item no-submenu hvr-underline-from-center"><i
+                                    class="fa fa-calculator"></i> Reports</a></li>
+                        <li><a href="settings.php" class="nav-top-item no-submenu hvr-underline-from-center"><i
+                                    class="fa fa-cog"></i> Settings</a></li>
+
+
+
+
+
+                        <li><a href="backup.php" class="nav-top-item no-submenu hvr-underline-from-center"><i
+                                    class="fa fa-database"></i> Backup</a></li>
+
+
+                        <li><a href="logout.php?out" class="nav-top-item no-submenu hvr-underline-from-center"><i
+                                    class="fa fa-sign-out"></i> Sign Out</a></li>
+                    </ul> <!-- End #main-nav -->
+                </nav>
+            </aside>
+            <div class="clear"></div>
+
+            <!-- get sms balance -->
+            <script
+                type="text/javascript">setTimeout(function () { var mode = 'smsBalance'; $.post('db/sms-info-process.php', { mode: mode }, function (data) { data = $.parseJSON(data); $('span.sms_count').html(data['SMS']); }); }, 5000);</script>
+        </div> <!-- End #sidebar -->
+        <div class="content-box-top">
+            <div class="content-box-header">
+                <ul class="nav nav-wizard" style="float:left">
+                    <li><a href="financial-reports.php"><i class="fa fa-database"></i> Reports</a></li>
+                    <li class="active"><a href="#">Purchase Report</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div> <!-- End .content-box-header -->
+
+            <div class="content-box-content">
+                <div id="bodyTab1">
+                    <div id="form">
+                        <form method="get" action="stocks-purchase-report.php">
+                            <div class="caption">From Date </div>
+                            <div class="field" style="width:300px;">
+                                <input type="text" name="fromDate" class="form-control datepicker hasDatepicker"
+                                    style="width:145px;" id="dp1625562837781" autocomplete="off">
+                            </div>
+                            <!--field-->
+                            <div class="clear"></div>
+
+                            <div class="caption">To Date </div>
+                            <div class="field" style="width:300px;">
+                                <input type="text" name="toDate" value="06-07-2021"
+                                    class="form-control datepicker hasDatepicker" style="width:145px;"
+                                    id="dp1625562837782" autocomplete="off">
+                            </div>
+                            <div class="clear"></div>
+
+
+
+                            <div class="caption">Account</div>
+                            <div class="field" style="width:300px;position:relative;">
+                                <div class="btn-group bootstrap-select supplierSelector form-control"><button
+                                        type="button" class="dropdown-toggle btn btn-default" data-toggle="dropdown"
+                                        title="Nothing selected"><span class="filter-option pull-left">Nothing
+                                            selected</span>&nbsp;<span class="bs-caret"><span
+                                                class="caret"></span></span></button>
+                                    <div class="dropdown-menu open">
+                                        <div class="bs-searchbox"><input type="text" class="form-control"
+                                                autocomplete="off"></div>
+                                        <ul class="dropdown-menu inner" role="menu">
+                                            <li data-original-index="0" class="selected"><a tabindex="0" class=""
+                                                    style="" data-tokens="null"><span class="text"></span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li data-original-index="1"><a tabindex="0" class="" style=""
+                                                    data-tokens="null"><span class="text">Cash in Hand A/c Admin<small
+                                                            class="text-muted">010101001</small></span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li data-original-index="2"><a tabindex="0" class="" style=""
+                                                    data-tokens="null"><span class="text">Cash In Hand A/c Malik javed
+                                                        sgoo<small class="text-muted">0101010002</small></span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li data-original-index="3"><a tabindex="0" class="" style=""
+                                                    data-tokens="null"><span class="text">pso<small
+                                                            class="text-muted">0401010002</small></span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li data-original-index="4"><a tabindex="0" class="" style=""
+                                                    data-tokens="null"><span class="text">PSO<small
+                                                            class="text-muted">0401010003</small></span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                        </ul>
+                                    </div><select class="supplierSelector form-control" name="supplier"
+                                        data-style="btn btn-default" data-live-search="true" style="border:none"
+                                        tabindex="-98">
+                                        <option selected="" value=""></option>
+                                        <option data-subtext="010101001" value="010101001">Cash in Hand A/c Admin
+                                        </option>
+                                        <option data-subtext="0101010002" value="0101010002">Cash In Hand A/c Malik
+                                            javed sgoo</option>
+                                        <option data-subtext="0401010002" value="0401010002">pso</option>
+                                        <option data-subtext="0401010003" value="0401010003">PSO</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="caption">Category </div>
+                            <div class="field" style="width:300px;">
+                                <div class="btn-group bootstrap-select itemSelector show-tick form-control"><button
+                                        type="button" class="dropdown-toggle btn btn-default" data-toggle="dropdown"
+                                        title="Nothing selected"><span class="filter-option pull-left">Nothing
+                                            selected</span>&nbsp;<span class="bs-caret"><span
+                                                class="caret"></span></span></button>
+                                    <div class="dropdown-menu open">
+                                        <div class="bs-searchbox"><input type="text" class="form-control"
+                                                autocomplete="off"></div>
+                                        <ul class="dropdown-menu inner" role="menu">
+                                            <li data-original-index="0" class="selected"><a tabindex="0" class=""
+                                                    style="" data-tokens="null"><span class="text"></span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li data-original-index="1"><a tabindex="0" class="" style=""
+                                                    data-tokens="null"><span class="text">Desal</span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li data-original-index="2"><a tabindex="0" class="" style=""
+                                                    data-tokens="null"><span class="text">Diesel</span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li data-original-index="3"><a tabindex="0" class="" style=""
+                                                    data-tokens="null"><span class="text">Petrol</span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                        </ul>
+                                    </div><select class="itemSelector show-tick form-control"
+                                        data-style="btn btn-default" data-live-search="true" style="border:none"
+                                        name="item_category" tabindex="-98">
+                                        <option selected="" value=""></option>
+                                        <option value="1">Desal</option>
+                                        <option value="12">Diesel</option>
+                                        <option value="2">Petrol</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="caption">Sub Category </div>
+                            <div class="field" style="width:300px;">
+                                <div class="btn-group bootstrap-select form-control"><button type="button"
+                                        class="btn dropdown-toggle btn-default" data-toggle="dropdown"
+                                        title="Nothing selected"><span class="filter-option pull-left">Nothing
+                                            selected</span>&nbsp;<span class="bs-caret"><span
+                                                class="caret"></span></span></button>
+                                    <div class="dropdown-menu open">
+                                        <div class="bs-searchbox"><input type="text" class="form-control"
+                                                autocomplete="off"></div>
+                                        <ul class="dropdown-menu inner" role="menu">
+                                            <li data-original-index="0" class="selected"><a tabindex="0" class=""
+                                                    style="" data-tokens="null"><span class="text"></span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                        </ul>
+                                    </div><select name="item_subcategory" class="form-control" data-live-search="true"
+                                        tabindex="-98">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+
+
+                            <div class="caption">Item </div>
+                            <div class="field" style="width:300px;">
+                                <div class="btn-group bootstrap-select itemSelector show-tick form-control"><button
+                                        type="button" class="dropdown-toggle btn btn-default" data-toggle="dropdown"
+                                        title="Nothing selected"><span class="filter-option pull-left">Nothing
+                                            selected</span>&nbsp;<span class="bs-caret"><span
+                                                class="caret"></span></span></button>
+                                    <div class="dropdown-menu open">
+                                        <div class="bs-searchbox"><input type="text" class="form-control"
+                                                autocomplete="off"></div>
+                                        <ul class="dropdown-menu inner" role="menu">
+                                            <li data-original-index="0" class="selected"><a tabindex="0" class=""
+                                                    style="" data-tokens="null"><span class="text"></span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li class="divider" data-optgroup="1div"></li>
+                                            <li class="dropdown-header " data-optgroup="1"><span
+                                                    class="text">Desal</span></li>
+                                            <li data-original-index="1" data-optgroup="1"><a tabindex="0" class="opt  "
+                                                    style="" data-tokens="null"><span class="text">desal</span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li data-original-index="2" data-optgroup="1"><a tabindex="0" class="opt  "
+                                                    style="" data-tokens="null"><span class="text">desel *</span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li class="divider" data-optgroup="2div"></li>
+                                            <li class="dropdown-header " data-optgroup="2"><span
+                                                    class="text">Petrol</span></li>
+                                            <li data-original-index="3" data-optgroup="2"><a tabindex="0" class="opt  "
+                                                    style="" data-tokens="null"><span class="text">16000</span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                        </ul>
+                                    </div><select class="itemSelector show-tick form-control"
+                                        data-style="btn btn-default" data-live-search="true" style="border:none"
+                                        name="item" tabindex="-98">
+                                        <option selected="" value=""></option>
+                                        <optgroup label="Desal">
+                                            <option value="1">desal</option>
+                                            <option value="3">desel *</option>
+                                        </optgroup>
+                                        <optgroup label="Petrol">
+                                            <option value="2">16000</option>
+                                        </optgroup>
+                                        <optgroup label="Diesel">
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="caption">User</div>
+                            <div class="field" style="width:300px;position:relative;">
+                                <div class="btn-group bootstrap-select form-control"><button type="button"
+                                        class="dropdown-toggle btn btn-default" data-toggle="dropdown"
+                                        title="Nothing selected"><span class="filter-option pull-left">Nothing
+                                            selected</span>&nbsp;<span class="bs-caret"><span
+                                                class="caret"></span></span></button>
+                                    <div class="dropdown-menu open">
+                                        <ul class="dropdown-menu inner" role="menu">
+                                            <li data-original-index="0" class="selected"><a tabindex="0" class=""
+                                                    style="" data-tokens="null"><span class="text"></span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li data-original-index="1"><a tabindex="0" class="" style=""
+                                                    data-tokens="null"><span class="text">Frontier
+                                                        Foundation</span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li data-original-index="2"><a tabindex="0" class="" style=""
+                                                    data-tokens="null"><span class="text">Malik javed sgoo</span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                        </ul>
+                                    </div><select name="user_id" class="form-control" data-style="btn btn-default"
+                                        tabindex="-98">
+                                        <option value=""></option>
+                                        <option value="1">Frontier Foundation</option>
+                                        <option value="3">Malik javed sgoo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+
+
+                            <div class="caption">VenderBill#</div>
+                            <div class="field" style="width:300px;position:relative;">
+                                <input type="text" name="vBillNo" class="form-control text-center" value=""
+                                    autocomplete="off">
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="caption">GatePass#</div>
+                            <div class="field" style="width:300px;position:relative;">
+                                <input type="text" name="gatePassNo" class="form-control text-center" value=""
+                                    autocomplete="off">
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="caption">COLOR</div>
+                            <div class="field" style="width:300px;position:relative;">
+                                <input type="text" name="color" class="form-control text-center" value=""
+                                    autocomplete="off">
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="caption">Report Type</div>
+                            <div class="field" style="width:300px;position:relative;">
+                                <div class="btn-group bootstrap-select form-control"><button type="button"
+                                        class="btn dropdown-toggle btn-default" data-toggle="dropdown"
+                                        data-id="repoType" title="Purchases"><span
+                                            class="filter-option pull-left">Purchases</span>&nbsp;<span
+                                            class="bs-caret"><span class="caret"></span></span></button>
+                                    <div class="dropdown-menu open">
+                                        <ul class="dropdown-menu inner" role="menu">
+                                            <li data-original-index="0" class="selected"><a tabindex="0" class=""
+                                                    style="" data-tokens="null"><span class="text">Purchases</span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                            <li data-original-index="1"><a tabindex="0" class="" style=""
+                                                    data-tokens="null"><span class="text">Purchases Return</span><span
+                                                        class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                                        </ul>
+                                    </div><select id="repoType" class="form-control" name="repoType" tabindex="-98">
+                                        <option value="P" selected="">Purchases</option>
+                                        <option value="R">Purchases Return</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--field-->
+                            <div class="clear"></div>
+
+                            <div class="caption">WH.Income Tax</div>
+                            <div class="field" style="width:300px;position:relative;">
+                                <input type="radio" name="with_tax" value="" id="radio0x" class="css-checkbox"
+                                    checked="">
+                                <label for="radio0x" class="css-label-radio radGroup2"> All </label>
+                                <input type="radio" name="with_tax" value="Y" id="radio1x" class="css-checkbox">
+                                <label for="radio1x" class="css-label-radio radGroup2"> YES </label>
+                                <input type="radio" name="with_tax" value="N" id="radio3x" class="css-checkbox">
+                                <label for="radio3x" class="css-label-radio radGroup2"> NO </label>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="caption">Status</div>
+                            <div class="field" style="width:300px;position:relative;">
+                                <input type="radio" name="unregistered_tax" value="" id="radio0xyz" class="css-checkbox"
+                                    checked="">
+                                <label for="radio0xyz" class="css-label-radio radGroup2"> All </label>
+                                <input type="radio" name="unregistered_tax" value="Y" id="radio1xyz"
+                                    class="css-checkbox">
+                                <label for="radio1xyz" class="css-label-radio radGroup2"> Unregistered </label>
+                                <input type="radio" name="unregistered_tax" value="N" id="radio1zee"
+                                    class="css-checkbox">
+                                <label for="radio1zee" class="css-label-radio radGroup2"> Registered </label>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="caption"></div>
+                            <div class="field">
+                                <input type="submit" value="Search" name="search" class="button">
+                            </div>
+                            <div class="clear"></div>
+                        </form>
+                    </div>
+                    <!--form-->
+                    <hr>
+
+
+                    <span style="float:right;"><button class="button printThis">Print</button></span>
+                    <div class="clear"></div>
+                    <div id="bodyTab" class="printTable" style="margin: 0 auto;">
+                        <div style="text-align:left;margin-bottom:0px;" class="pageHeader">
+                            <p style="text-align: left;font-size:24px;margin: 0px;padding:0px;">Frontier Foundation
+                                Filling Station </p>
+                            <p style="text-align: left;font-size:24px;margin: 0px;padding:0px;">Purchase Report </p>
+                            <p style="font-size:16px;text-align:left;padding: 0px;">
+                                From 01-07-2021 To 06-07-2021 </p>
+                            <p class="repoDate">Report Generated On: 06-07-2021</p>
+                        </div>
+                        <table class="tableBreak tableStyle">
+                            <thead class="tHeader">
+                                <tr style="background:#EEE;">
+
+
+
+                                    <th width="5%" class="text-center">Bill#</th>
+
+
+                                    <th width="5%" class="text-center">V/Bill#</th>
+
+                                    <th width="5%" class="text-center">GP#</th>
+
+                                    <th width="5%" class="text-center">Date</th>
+
+
+
+                                    <th width="10%" class="text-center">USER</th>
+
+                                    <th width="10%">Account </th>
+
+
+                                    <th width="10%">Category</th>
+
+                                    <th width="10%">SubCategory</th>
+
+                                    <th width="20%">Item</th>
+
+
+
+                                    <th width="5%" class="text-center">qty</th>
+
+
+
+
+                                    <th width="5%" class="text-center">Rate</th>
+
+                                    <th width="7%" class="text-center">Disc / @</th>
+
+                                    <th width="9%" class="text-center">TotalAmt(Rs.)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="recordPanel" class="alt-row">
+
+
+                                    <td class="text-center">2</td>
+
+                                    <td class="text-center"></td>
+
+
+
+                                    <td class="text-center">
+                                    </td>
+
+                                    <td class="text-center">02/Jul/2021</td>
+
+
+
+                                    <td class="text-center">Frontier </td>
+
+                                    <td>PSO</td>
+
+
+                                    <td class="text-center">
+                                        Desal </td>
+
+                                    <td class="text-center">
+                                        Desal </td>
+
+                                    <td>
+                                        desel *(10103) </td>
+
+
+
+                                    <td class="text-center">32000</td>
+
+
+                                    <td class="text-center">108.92</td>
+                                    <!-- <td class="text-center"></td> -->
+                                    <td class="text-center">0.00()</td>
+                                    <!-- <td class="text-center"></td> -->
+
+                                    <td style="text-align:right;">3,485,440.00</td>
+                                </tr>
+
+                            </tbody>
+                            <tfoot class="tableFooter">
+                                <tr>
+                                    <th class="text-center" colspan="8">Total</th>
+
+                                    <th style="text-align:right;"></th>
+
+
+
+
+
+
+
+
+
+
+                                    <th class="text-center"> 32000 </th>
+
+
+                                    <th class="text-center">---</th>
+                                    <!-- <th class="text-center">  </th> -->
+                                    <th class="text-center"> - - - </th>
+                                    <!-- <th class="text-center">  </th> -->
+                                    <th style="text-align:right;"> 3,485,440.00 </th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div class="clear"></div>
+                    </div>
+                    <!--End bodyTab-->
+                </div> <!-- End bodyTab1 -->
+            </div> <!-- End .content-box-content -->
+        </div>
+        <!--content-box-->
+    </div>
+    <!--body-wrapper-->
+
+
+
+    <script>$("select[name=item_category]").change(function () { var catgId = $('option:selected', this).val(); var mode = 'getSubCategoryByid'; $.post('db/itemCategory.php', { mode: mode, catgId: catgId }, function (data) { $("select[name=item_subcategory]").html(data); $("select[name=item_subcategory]").selectpicker('refresh'); }); });</script>
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+    </div>
+    <div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<html>
+    
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>SIT Solutions</title>
+    <link rel="stylesheet" href="http://frontierfoundation.sitsbook.info/resource/css/A.reset.css+style.css+invalid.css+form.css+tabs.css+reports.css+font-awesome.css+bootstrap.min.css+bootstrap-select.css,Mcc.qonYrkLRZp.css.pagespeed.cf.YwXIcZS6TI.css" type="text/css" media="screen"/>
+    
+    
+    
+    
+    
+    <script src="https://kit.fontawesome.com/73f6a8d89f.js" crossorigin="anonymous"></script>
+    
+    
+	<link href="http://frontierfoundation.sitsbook.info/resource/css/A.lightbox.css+jquery-ui,,_jquery-ui.min.css+bootstrap-nav-wizard.css,Mcc.-YOmEYIUgs.css.pagespeed.cf.g0oCwGwnkW.css" rel="stylesheet" type="text/css"/>
+    
+    
+
+	<style>th{font-size:14px!important;text-transform:uppercase!important}tfoot tr{background-color:#eee}tfoot tr td{font-size:14px!important;font-weight:900}</style>
+
+
+	<script type="text/javascript" src="http://frontierfoundation.sitsbook.info/resource/scripts/jquery.1.11.min.js.pagespeed.jm.hPNW4XMyyU.js"></script>
+	<script src="http://frontierfoundation.sitsbook.info/resource/scripts/bootstrap-select.js.pagespeed.jm.za2R-lqzCJ.js" type="text/javascript"></script>
+	<script src="http://frontierfoundation.sitsbook.info/resource/scripts/bootstrap.min.js.pagespeed.jm.4foEeaSD2Q.js"></script>
+	<script src="http://frontierfoundation.sitsbook.info/resource/scripts/jquery-ui.min.js.pagespeed.jm.kliCpEL7OZ.js"></script>
+    <script src="http://frontierfoundation.sitsbook.info/resource/scripts/configuration.js+tab.js+sideBarFunctions.js+lightbox-2.6.min.js+printThis.js.pagespeed.jc.0FiyzFgtF9.js"></script><script>eval(mod_pagespeed_zNaeWdj6CZ);</script>
+    <script>eval(mod_pagespeed_Zj5mibmjo4);</script>
+    <script>eval(mod_pagespeed_Q0PFI10iCn);</script>
+	<script>eval(mod_pagespeed_vug0pXi43Y);</script>
+    <script>eval(mod_pagespeed_MRUQvykWug);</script>
+    <script type="text/javascript">$(window).on('load',function(){$(".printThis").click(function(){var MaxHeight=884;var RunningHeight=0;var PageNo=1;$('table.tableBreak>tbody>tr').each(function(){if(PageNo==1){MaxHeight=750;}if(PageNo!=1){MaxHeight=820;}if(RunningHeight+$(this).height()>MaxHeight){RunningHeight=0;PageNo+=1;}RunningHeight+=$(this).height();$(this).attr("data-page-no",PageNo);});var tableHeader=$(".tHeader").html();var tableFooter=$(".tableFooter").html();var repoDate=$(".repoDate").text();$(".tHeader").remove();$(".tableFooter").remove();$(".repoDate").remove();for(i=1;i<=PageNo;i++){if(i==1){MaxHeight=750;}if(i!=1){MaxHeight=820;}$('table.tableBreak').parent().append("<div class='tablePage' style='height:"+MaxHeight+"px'><table id='Table"+i+"' class='newTable'><thead></thead><tbody></tbody></table><div class='pageFoooter'><p style=\"float:left; margin-left:0px; font-size:14px\" class=\"repoGen\">"+repoDate+"</p><span class='pazeNum'>Page. "+i+"/"+PageNo+"</span></div><div class='clear'></div></div>");var rows=$('table tr[data-page-no="'+i+'"]');$('#Table'+i).find("thead").append(tableHeader);$('#Table'+i).find("tbody").append(rows);}$(".newTable").last().append(tableFooter);$('table.tableBreak').remove();$(".printTable").printThis({debug:false,importCSS:false,printContainer:true,loadCSS:'resource/css/reports.css',pageTitle:"Sitsbook.com",removeInline:false,printDelay:500,header:null});});$('.itemSelector').selectpicker();$('.supplierSelector').selectpicker();$("select[name=state]").selectpicker();$('#repoType').selectpicker();$("select.user_id").selectpicker();});</script>
+</head>
+
+<body>
+    <div id="body-wrapper">
+        <div id="sidebar">
+            <input type="hidden" value="supplier-stock-report.php" class="this_file_name"/>
+<input type="hidden" value="010101001" class="cash_default"/>
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="hamburger hamburger--3dx-r pull-left toggleSideBar"><span class="hamburger-box"><span class="hamburger-inner"></span></span></a>
+			<a href="dashboard.php" class="navbar-brand">
+				<img alt="Company logo" class="logo_small" src="http://frontierfoundation.sitsbook.info/resource/images/sitsbook-logo/xlogo.png.pagespeed.ic.yc8eysGIR6.webp"/></a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				
+								
+				<li><a class="notification-icons" href="change-password.php">
+					<i class="fa fa-user"></i> <span>Frontier  Foundation</span> </a>
+				</li>
+				<li><a class="notification-icons" href="logout.php?out" data-toggle="tooltip" title="Logout"><i class="fa fa-sign-out"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<aside>
+	<nav class='site-nav'>
+		<ul id="main-nav">
+				<li><a href="dashboard.php" class="nav-top-item no-submenu"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+			<li><a class="nav-top-item"><i class="fa fa-book"></i> Cash / Cheque</a>
+				<ul>
+							<li><a href="create-voucher.php">Journal Voucher</a></li>
+								<li><a href="cash-book-voucher.php">Cash Book</a></li>
+							<li><a href="cash-receipt.php">Cash Receipt</a></li>
+								<li><a href="cash-payment.php">Cash Payment</a></li>
+								<li><a href="bank-receipt.php">Bank Receipt</a></li>
+								<li><a href="bank-payment.php">Bank Payment</a></li>
+								<li><a href="posted-enteries.php">Search Vouchers</a></li>
+					</ul>
+			</li>
+					<li><a class="nav-top-item"><i class="fa fa-shopping-cart"></i> Purchases</a>
+				<ul>
+	<li><a href="purchase-details.php">Purchases</a></li><li><a href="purchase-return-details.php">Purchase Returns</a></li>
+					</ul>
+			</li>
+
+			
+			
+
+	
+
+	
+
+	
+
+
+
+							<!--<li><a class="nav-top-item no-submenu" href="nozzle-sales-records-form-machine.php">-->
+				<!--	<i class="fa fa-cog"></i> Nozzles Bills</a></li>-->
+			
+
+			<li><a class="nav-top-item"><i class="fa fa-angle-double-right"></i> Sales</a>
+				<ul>
+
+	
+
+									<!-- <li><a href="sale-orders.php">Sale Orders</a></li> -->
+						<li><a href="sale-details.php">Sales</a></li><li><a href="sales-return-details.php">Sale Returns</a></li>
+
+
+					</ul>
+			</li>
+
+	
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+			
+			<li><a class="nav-top-item"><i class="fa fa-cog"></i> Petrol Pump</a>
+				<ul>
+					<li><a href="pp-nozzle-reading-form.php"> Nozzle Reading Form</a></li>
+					<li><a href="pp-nozzle-reading-list.php?tab=list"> Nozzle Reading List</a></li>
+				</ul>
+			</li>
+	
+	
+
+	
+
+	
+	
+
+	
+			<li><a class="nav-top-item"><i class="fa fa-angle-double-right"></i> Embroidery</a>
+				<ul>
+							</ul>
+					</li>
+					
+	
+			<!-- <li><a class="nav-top-item"><i class="fa fa-money"></i>Cheques</a> -->
+				<!-- <ul> -->
+	
+					<!-- </ul> -->
+			<!-- </li> -->
+
+	
+
+	
+					<li><a href="financial-reports.php" class="nav-top-item no-submenu"><i class="fa fa-calculator"></i> Reports</a></li>
+						<li><a href="settings.php" class="nav-top-item no-submenu"><i class="fa fa-cog"></i> Settings</a></li>
+	
+
+	
+	
+
+				<li><a href="backup.php" class="nav-top-item no-submenu"><i class="fa fa-database"></i> Backup</a></li>
+	
+
+		<li><a href="logout.php?out" class="nav-top-item no-submenu"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+	</ul> <!-- End #main-nav -->
+	</nav>
+</aside>
+<div class="clear"></div>
+
+<!-- get sms balance -->
+<script type="text/javascript">setTimeout(function(){var mode='smsBalance';$.post('db/sms-info-process.php',{mode:mode},function(data){data=$.parseJSON(data);$('span.sms_count').html(data['SMS']);});},5000);</script>        </div> <!-- End #sidebar -->
+        <div class="content-box-top">
+            <div class="content-box-header">
+                <ul class="nav nav-wizard" style="float:left">
+                    <li><a href="financial-reports.php"><i class="fa fa-database"></i> Reports</a></li>
+                    <li class="active"><a href="#">Supplier Stock Report</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div> <!-- End .content-box-header -->
+
+            <div class="content-box-content">
+                <div id="bodyTab1">
+                    <div id="form">
+                    <form method="post" action="">
+
+                        <div class="caption">Account</div>
+                        <div class="field" style="width:300px;position:relative;">
+                                <select class="supplierSelector form-control " name="supplier" data-style="btn-default" data-live-search="true" style="border:none">
+                                        <option selected value=""></option>
+                                   <option data-subtext="0401010002" value="0401010002">pso</option>
+                                       <option data-subtext="0401010003" value="0401010003">PSO</option>
+                                    </select>
+                        </div>
+                        <div class="clear"></div>
+
+                        <div class="caption">Item </div>
+                        <div class="field" style="width:300px;">
+                        <select class="itemSelector show-tick form-control" name="item" data-style="btn-default" data-live-search="true" style="border:none">
+        	               <option selected value=""></option>
+							<optgroup label="Desal">
+	       						<option value="1" data-subtext="">desal</option>
+	       						<option value="3" data-subtext="">desel *</option>
+							</optgroup>
+							<optgroup label="Diesel">
+							</optgroup>
+							<optgroup label="Petrol">
+	       						<option value="2" data-subtext="">16000</option>
+							</optgroup>
+                    		</select>
+                        </div>
+                        <div class="clear"></div>
+
+                        <div class="caption"></div>
+                        <div class="field">
+                            <input type="submit" value="Search" name="search" class="button"/>
+                        </div>
+                        <div class="clear"></div>
+                    </form>
+                    </div><!--form-->
+                    <hr/>
+
+                </div> <!-- End bodyTab1 -->
+            </div> <!-- End .content-box-content -->
+		</div><!--content-box-->
+    </div><!--body-wrapper-->
+</body>
+</html>
+
+<script></script>
+
+</html>
